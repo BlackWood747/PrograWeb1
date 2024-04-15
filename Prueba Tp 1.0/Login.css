@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url("./Src Img/Neon.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 70px;
+    padding-bottom: 5px;
+    text-align: center;
+    h5 {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+}
+
+main ul {
+    text-align: center;
+    list-style-type: none;
+    margin: 40px;
+}
+
+main ul li {
+    margin-bottom: 15px;
+}
+
+main ul li label {
+    display: inline-block; /* Para que los labels ocupen solo el espacio necesario */
+    text-align: right; /* Alinea el texto del label a la derecha */
+    margin-right: 10px; /* Espacio entre el label y el cuadro de entrada */
+}
+
+main ul li input {
+    display: inline-block;
+    width: calc(100% - 120px); /* Calcula el ancho del cuadro de entrada para ocupar el resto del espacio disponible */
+    padding: 5px; /* Espacio interno del cuadro de entrada */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+main ul li button {
+    background-color: #30b1ec;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 50px; 
+    border: none; 
+    cursor: pointer; 
+}
