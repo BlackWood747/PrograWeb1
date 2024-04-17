@@ -1,0 +1,14 @@
+header {
+     background-image: url("./Src Img/Neon.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 70px;
+    padding-bottom: 5px;
+    text-align: center;
+    h1 {
+        text-align: center;
+      color: aqua;
+    }
+
+}
