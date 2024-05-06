@@ -2,6 +2,7 @@ header {
   background-image: url("./Src Img/Neon.jpg");
   background-size: cover;
   background-position: center;
+  height: 200px;
 
   color: white;
   padding-top: 70px;
@@ -9,42 +10,60 @@ header {
   text-align: center;
 
   h1 {
+    padding: top 100px;
     text-align: center;
   }
 }
 .ingresoDatos {
+  padding-top: auto;
   align-items: center;
-  width: auto;
+  width: 600px;
+  margin: auto;
+  height: 200px;
+
 
   margin-top: 110px;
-
+  border-style: solid;
+border-radius: 20px;
   border-color: black;
-  border: 2px;
+  border-width: 3px;
 }
 .ingresoDatos_Email {
+
+  display: block;
   width: fit-content;
   text-align: center;
-  padding: 2px;
+  padding-left: 70px;
 
-  margin: 10px 360px 10px 645px;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 .ingresoDatos_Email input {
   margin-left: 40px;
 }
 .ingresoDatos_Usuario {
+  display: block;
   text-align: center;
   padding: 2px;
+  width: fit-content;
 
-  margin: 10px 70px 10px 0px;
+  margin:0 auto;
+  margin-top: 10px;
 }
 .ingresoDatos_Usuario input {
   margin-left: 10px;
 }
 .submit_recuperarContraseña {
-  margin: 20px;
+  margin: 35px;
   text-align: center;
 }
-
+.submit_warning {
+  background-color: red;
+  margin-left: 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 1px;
+}
 main {
   margin: 0%;
 }
