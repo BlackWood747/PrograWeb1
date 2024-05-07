@@ -57,12 +57,25 @@ border-radius: 20px;
   margin: 35px;
   text-align: center;
 }
-.submit_warning {
+.btn_warning {
+  font-size: 15px;
+    border: none;
+  color: black;
   background-color: red;
+  padding: 7px 17px;
   margin-left: 20px;
   margin-right: 10px;
-  border: none;
-  border-radius: 1px;
+  text-decoration: none;
+  
+  border-radius: 5px;
+}
+.btn_submit{
+    border: none;
+  color: black;
+  background-color: green;
+  padding: 7px 17px;
+  text-decoration: none;
+  border-radius: 4px;
 }
 main {
   margin: 0%;
