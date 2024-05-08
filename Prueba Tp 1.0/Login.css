@@ -21,11 +21,15 @@ header {
 
 main ul {
     text-align: center;
+    max-width: 600px;
     list-style-type: none;
-    margin: 40px;
+    margin: 0 auto;
+
 }
 
 main ul li {
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
 }
 
@@ -33,16 +37,20 @@ main ul li label {
     display: inline-block; /* Para que los labels ocupen solo el espacio necesario */
     text-align: right; /* Alinea el texto del label a la derecha */
     margin-right: 10px; /* Espacio entre el label y el cuadro de entrada */
+    width: 50%;
 }
 
 main ul li input {
     display: inline-block;
-    width: calc(100% - 120px); /* Calcula el ancho del cuadro de entrada para ocupar el resto del espacio disponible */
+    text-align: center;
+    margin-top: 10px;
+    width: 50%;
     padding: 5px; /* Espacio interno del cuadro de entrada */
     box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
 
 main ul li button {
+
     background-color: #30b1ec;
     color: white;
     font-weight: bold;
