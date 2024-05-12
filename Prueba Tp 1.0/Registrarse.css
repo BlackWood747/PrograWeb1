@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-image: url("./Src Img/Neon.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding-top: 70px;
+  padding-bottom: 1px;
+  text-align: center;
+
+  h1 {
+    padding-bottom: 75px;
+  }
+
+  h5 {
+    text-align: left;
+    padding-left: 20px;
+  }
+}
+
+main ul {
+    text-align: left;
+    max-width: 450px;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+.pagina {
+    display: flex;
+}
+
+.pagina-forms {
+    flex: 1;
+    ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    ul li label {
+        display: inline; 
+        text-align: right; 
+        margin-right: 20px; 
+        width: 162px;
+    }
+
+    ul li input {
+        display: inline-block;
+        text-align: center;
+        width: 50%;
+        padding: 5px; 
+        box-sizing: border-box;
+    }
+}
+
+.pagina-pago {
+    flex-direction: column;
+    flex: 1;
+}
+
+.button-confirm {
+    
+    background-color: #30ec39;
+    color: white;
+    font-weight: bold;
+    padding: 10px 50px; 
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+.button-cancel {
+    background-color: #ec3049;
+    color: white;
+    font-weight: bold;
+    padding: 10px 50px; 
+    border-radius: 5px;
+    cursor: pointer; 
+}
