@@ -1,0 +1,33 @@
+.buscarPorNombre {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    justify-content: space-between;
+}
+.buscarPorNombre h1{ 
+    font-size: 30px;
+
+}
+.Descripcion-pelicula iframe {
+    margin-top: 20px;
+    margin-left: 20px;
+    size-adjust: 20px;
+}
+.Descripcion-pelicula p {
+    display: inline-block;
+
+}
+
+
+.buscarPorNombre input {
+    width: 200px;
+    height: 30px;
+    border-radius: 25px;
+}
+
+.buscarPorNombre button {
+    margin-left: 10px;
+    width: 80px;
+    height: 40px;
+    border-radius: 25px;
+}
