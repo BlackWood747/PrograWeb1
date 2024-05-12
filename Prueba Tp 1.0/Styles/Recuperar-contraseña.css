@@ -1,4 +1,4 @@
-header {
+/*header {
   background-image: url("./Src Img/Neon.jpg");
   background-size: cover;
   background-position: center;
@@ -13,7 +13,7 @@ header {
     padding: top 100px;
     text-align: center;
   }
-}
+}*/
 .ingresoDatos {
   padding-top: auto;
   align-items: center;
@@ -40,6 +40,7 @@ border-radius: 20px;
 }
 .ingresoDatos_Email input {
   margin-left: 40px;
+  padding: 5px;
 }
 .ingresoDatos_Usuario {
   display: block;
@@ -52,6 +53,7 @@ border-radius: 20px;
 }
 .ingresoDatos_Usuario input {
   margin-left: 10px;
+  padding: 5px;
 }
 .submit_recuperarContraseña {
   margin: 35px;
