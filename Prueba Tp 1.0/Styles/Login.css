@@ -4,21 +4,6 @@ body {
     padding: 0;
 }
 
-header {
-    background-image: url("./Src Img/Neon.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding-top: 70px;
-    padding-bottom: 5px;
-    text-align: center;
-    h5 {
-        text-align: left;
-        padding-left: 20px;
-    }
-
-}
-
 main ul {
     text-align: center;
     max-width: 450px;

@@ -6,11 +6,22 @@ body {
 }
 
 /* Estilos del encabezado */
+
 header {
+    background-image: url("../Src\ Img/Neon.jpg");
+    background-size: cover;
+    background-position: center;
     background-color: #333;
     color: #fff;
-    padding: 20px;
     text-align: center;
+    padding-top: 70px;
+    padding-bottom: 5px;
+    text-align: center;
+    h5 {
+        text-align: left;
+        padding-left: 20px;
+    }
+
 }
 
 /* Estilos del menú de navegación */
