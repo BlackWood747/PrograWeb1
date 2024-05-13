@@ -15,7 +15,7 @@ h2 {
     display: flex;
 }
 
-.pagina-forms {
+.pagina-forms .formulario {
     flex: 1;
     ul li {
         display: flex;
@@ -35,11 +35,13 @@ h2 {
     ul li input {
         display: inline-block;
         text-align: center;
-        width: 50%;
         padding: 5px;
         box-sizing: border-box;
     }
     
+}
+.datos li input{
+    width: 60%;
 }
 
 .pagina-pago {
@@ -55,10 +57,16 @@ h2 {
 .metodo-pago {
     margin-bottom: 60px;
     margin-top: 60px;
-
+    text-align: justify;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: white;
+}
+/* .metodo-pago ul li input{
+    width: 100%;
+} */
+.pagina-pago{
 }
 
 .button-confirm {
