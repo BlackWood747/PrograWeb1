@@ -45,15 +45,14 @@ header::after {
 /* Estilos del menú de navegación */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px;
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 nav ul {
     list-style-type: none;
-    margin-left: 50px;
     padding: 0;
 }
 
@@ -72,12 +71,55 @@ nav ul li a:hover {
     color: rgb(255, 72, 255);
 }
 
+.iconoDeUsuario_container {
+    display: flex;
+    justify-content: flex-end;
+    width: 220px;
+}
+
 .iconoDeUsuario {
     width: 45px;
     height: 45px;
-    margin-right: 50px;
-    background-color: aqua;
     border-radius: 50%;
+    border: 2px solid rgb(29, 27, 32);
+    transition: all 250ms ease-in-out;
+}
+
+.iconoDeUsuario:hover {
+    border: 2px solid rgb(255, 72, 255);
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(255, 72, 255, 0.664);
+    -moz-box-shadow: 0px 0px 10px 1px rgb(255, 72, 255, 0.664);
+    box-shadow: 0px 0px 10px 1px rgb(255, 72, 255, 0.664);
+}
+
+.iconoDeUsuario img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.buscarPorNombre {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.buscarPorNombre input {
+    width: 300px;
+    height: 27px;
+    border-radius: 25px;
+    text-decoration: none;
+    border-style: none;
+}
+
+.buscarPorNombre button {
+    background-color: #fff;
+    width: 50px;
+    height: 27px;
+    border-radius: 25px;
+    border-style: none;
+    position: absolute;
 }
 
 /* Estilos del contenido */
