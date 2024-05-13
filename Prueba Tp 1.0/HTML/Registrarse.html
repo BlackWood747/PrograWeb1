@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="../Styles/registrarse.css">
+    <link rel="stylesheet" href="../Styles/styles.css">
+   
+</head>
+<header>
+    <h1>FUNTUBE</h1>
+    <h3>Series y peliculas en stream</h3>
+</header>
+
+<main>
+
+    <h3>Complete los datos para registrarse</h3>
+
+    <div class="pagina">
+        <div class="pagina-forms">
+            <form action="./logIn.html" method="get">
+                <ul>
+                    <li>
+                        <label for="name"> Nombre </label>
+                        <input type="text" name="nombre" id="name" placeholder="Ingrese su nombre"
+                                required>
+                    </li>
+                    <li>
+                        <label for="surname"> Apellido </label>
+                        <input type="text" name="apellido" id="surname" placeholder="Ingrese su apellido"
+                                required>
+                    </li>
+                    <li>
+                        <label for="email"> E-mail </label>
+                        <input type="text" name="email" id="email" placeholder="Ingrese su E-mail"
+                                required>
+                    </li>
+                    <li>
+                        <label for="usuario"> Nombre de usuario </label>
+                        <input type="text" name="nombreDeUsuario" id="usuario" placeholder="Ingrese Nombre de usuario"
+                                required>
+                    </li>
+                    <li>
+                        <label for="password"> Contraseña </label>
+                        <input type="password" name="contraseña" id="password" placeholder="Ingrese su contraseña"
+                                required>
+                    </li>
+                    <li>
+                        <label for="verifypassword"> Verificar Contraseña </label>
+                        <input type="password" name="verificarContraseña" id="verifypassword" placeholder="Verifique su contraseña"
+                                required>
+                    </li>
+                </ul>
+        </div>
+        <div class="pagina-pago">
+                <ul>
+                    <li>
+                        <h3> Metodo de pago </h3>
+                    </li>
+                    <li>
+                        <label class="credit-card"><input type="radio" name="pay-mettod" value="opcion1"> Tarjeta de crédito </label>
+                    </li>
+                    <li>
+                        <label class="cuppon"><input type="radio" name="pay-mettod" value="opcion2"> Cupón de pago </label>
+                    </li>
+                    <li>
+                        <label class="bank"><input type="radio" name="pay-mettod" value="opcion3"> Transferencia bancaria </label>
+                    </li>
+                </ul>
+                <button class="button-confirm" type="sumbit">
+                    Confirmar
+                </button>
+            </form>
+            <form action="./logIn.html" method="get">
+                <button class="button-cancel" type="sumbit"> Cancelar </button>
+            </form>
+        </div>
+    </div>
+    
+</main>
+</body>
+</html>

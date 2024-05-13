@@ -1,0 +1,80 @@
+.nombreyfoto{
+    display: flex;
+    flex-direction: column;
+}
+.nombreyfoto img {
+    height: 80px;
+    width: 80px;
+}
+nav{
+  justify-content: flex-start;
+ 
+  }
+
+
+.todosLosDatos{
+   
+   display: flex;
+   
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+} 
+.emailYContraseña{
+    width: 500px;
+       display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        justify-content: space-between;
+       li {
+        display: block;
+       }
+ 
+    }
+    .email{
+        
+        li {
+            display: inline;
+        
+        }
+    }
+    .contraseña {
+       
+    
+        display: block;
+       li {display: inline;
+        
+       
+    }
+}
+
+
+.metododepago {
+   ul {
+     list-style: none;
+   }
+}
+   
+   
+  
+.nombreyfoto {
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.nombreyfoto p{
+    margin-left: 20px;
+    
+}
+.button-confirm{
+     
+    background-color: #30ec39;
+    color: white;
+    font-weight: bold;
+    padding: 10px 50px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    display: inline-block;
+    align-items: center;
+}
+
