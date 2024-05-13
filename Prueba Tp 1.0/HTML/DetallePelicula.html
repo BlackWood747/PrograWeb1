@@ -1,71 +1,98 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/styles.css">
-    <link rel="stylesheet" href="../Styles/detallePelicula.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Styles/styles.css" />
+    <link rel="stylesheet" href="../Styles/detallePelicula.css" />
     <title>Detalle Peliculas</title>
-    
-</head>
+  </head>
 
-<body>
+  <body>
+    <header>
+      <h1>FUNTUBE</h1>
+      <h3>Series y peliculas en stream</h3>
+    </header>
     <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Series</a></li>
-            <li><a href="#">Peliculas</a></li>
-        </ul>
-        <div class="buscarPorNombre">
-            <div> <input type="text">
-            <button>Buscar</button>
-        </div>
-            <h1>FUNTUBE</h1>
-        </div>
-      
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../HTML/series.html">Series</a></li>
+        <li><a href="../HTML/peliculas.html">Peliculas</a></li>
+      </ul>
+      <div class="buscarPorNombre">
+        <input placeholder="Buscar por nombre" type="text" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
     </nav>
-<section class="Descripcion-pelicula">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/AEBIJRAkujM?si=kZY67RQdQHGY1v64?autoplay=1" title="YouTube video player"
-    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-    <p>Titulo:</p>
-    <p>American made</p>
-    <p>Duracion</p>
-    <p>115 minutos</p>
-    <p>Genero</p>
-    <p>Comedia y accion</p>
-    <p>Actores</p>
-    <a href="https://en.wikipedia.org/wiki/Tom_Cruise">Tom Cruise</a>
-    <a href="https://en.wikipedia.org/wiki/Domhnall_Gleeson">Domhnall Gleeson</a>
-    <a href="https://en.wikipedia.org/wiki/Sarah_Wright">Sarah Wright</a>
-    <a href="https://en.wikipedia.org/wiki/Jesse_Plemons">Jesse Plemons</a>
-    <a href="https://en.wikipedia.org/wiki/Caleb_Landry_Jones">Caleb Landry</a>
-    <p>La historia de Barry Seal, un piloto a quien la CIA contrató en los años 80 para realizar una misión encubierta en América Central,
-    la cual fue el origen del nacimiento del cártel de Medellín y casi terminó con la presidencia de Ronald Reagan.</p>
-       <div class="btn-irapelicula">
-        <a href="" target="_blank"></a>
-       </div> 
-</section>
-<section class="peliculas-similares">
-<img class="peli1">
-<a href="detallesDePeliculas/click.html">
-    <img src="Src Img/click-adam snadler.jpg" alt="">
-</a>
-</article>
-<article class="peli2">
-    <a href="detallesDePeliculas/superbad.html">
-        <img src="Src Img/superCool-poster.jpg" alt="">
-    </a>
-</article>
-<article class="peli3">
-    <a href="detallesDePeliculas/thehangover.html">
-    <img src="Src Img/thehangover.jpg" alt="">
-</a></article>
-<article class="peli4">
-    <a href="detallesDePeliculas/neighbors.html">
-    <img src="Src Img/neighbors.jpg" alt="">
-</a>
-</article>
-</section>
-</body>
+    <main>
+      <section class="Descripcion-pelicula">
+        <article class="caja-1">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/AEBIJRAkujM?si=kZY67RQdQHGY1v64?autoplay=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </article>
+        <article class="caja-2">
+          <p>Titulo:</p>
+          <p>American made</p>
+          <br />
+          <p>Duracion:</p>
+          <p>115 minutos</p>
+          <p>Genero:</p>
+          <br />
+          <p>Comedia y accion</p>
+          <p>Actores</p>
+          <a href="https://en.wikipedia.org/wiki/Tom_Cruise">Tom Cruise</a>
+          <a href="https://en.wikipedia.org/wiki/Domhnall_Gleeson"
+            >Domhnall Gleeson</a
+          >
+          <a href="https://en.wikipedia.org/wiki/Sarah_Wright">Sarah Wright</a>
+          <a href="https://en.wikipedia.org/wiki/Jesse_Plemons"
+            >Jesse Plemons</a
+          >
+          <a href="https://en.wikipedia.org/wiki/Caleb_Landry_Jones"
+            >Caleb Landry</a
+          >
+          <br />
+          <p>
+            La historia de Barry Seal, un piloto a quien la CIA contrató en los
+            años 80 para realizar <br />
+            una misión encubierta en América Central, la cual fue el origen del
+            nacimiento del cártel <br />de Medellín y casi terminó con la
+            presidencia de Ronald Reagan.
+          </p>
+          <div class="btn-irapelicula">
+            <a href="" target="_blank"></a>
+          </div>
+        </article>
+      </section>
+      <section class="peliculas-similares">
+        <article class="peli">
+          <a href="../HTML/detallesDePeliculas/click.html">
+            <img src="../Src Img/click-adam snadler.jpg" alt="" />
+          </a>
+        </article>
+        <article class="peli">
+          <a href="../HTML/detallesDePeliculas/superbad.html">
+            <img src="../Src Img/superbad.jpg" alt="" />
+          </a>
+        </article>
+        <article class="peli">
+          <a href="../HTML/detallesDePeliculas/thehangover.html">
+            <img src="../Src Img/thehangover.jpg" alt="" />
+          </a>
+        </article>
+        <article class="peli">
+          <a href="../HTML/detallesDePeliculas/neighbors.html">
+            <img src="../Src Img/neighbors.jpg" alt="" />
+          </a>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>

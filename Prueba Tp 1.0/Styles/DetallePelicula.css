@@ -1,33 +1,56 @@
-.buscarPorNombre {
-    display: flex;
-    align-items: center;
-    margin-right: 50px;
+nav {
     justify-content: space-between;
 }
-.buscarPorNombre h1{ 
-    font-size: 30px;
-
-}
 .Descripcion-pelicula iframe {
+    border-radius: 5px;
     margin-top: 20px;
     margin-left: 20px;
-    size-adjust: 20px;
+  
 }
 .Descripcion-pelicula p {
     display: inline-block;
 
 }
 
-
-.buscarPorNombre input {
-    width: 200px;
-    height: 30px;
-    border-radius: 25px;
+.Descripcion-pelicula {
+    display: flex;
+   img {
+     box-sizing: border-box;
+    width: 100%;
+   }
 }
 
-.buscarPorNombre button {
-    margin-left: 10px;
-    width: 80px;
-    height: 40px;
-    border-radius: 25px;
+.caja-1 {
+    margin-right: 10px;
+}
+.peliculas-similares{
+    display: flex;
+    justify-content: center;
+}
+.peli {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border: 2px solid rgb(29, 27, 32);
+    background-color: gray;
+    text-align: center;
+    line-height: 150px;
+    border-radius: 8px;
+    transition:all 1s;
+    cursor: pointer;
+}
+
+.peli:hover {
+    border: 2px solid white;
+    -webkit-box-shadow: 0px 0px 16px 2px rgb(117, 117, 117);
+    -moz-box-shadow: 0px 0px 16px 2px rgb(117, 117, 117);
+    box-shadow: 0px 0px 16px 2px rgb(117, 117, 117);
+}
+
+
+.peli img {
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+
 }
