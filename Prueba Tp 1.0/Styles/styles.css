@@ -47,6 +47,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -144,6 +145,7 @@ article {
 footer {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     height: 400px;
      color: #fff; 
      padding: 10px; 
@@ -155,6 +157,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     width:35%;
 }
 
@@ -215,13 +218,14 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
     width: 35%;
 }
 
 .funtubeLogo_container {
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .funtubeLogo_container h1 {
@@ -245,5 +249,52 @@ footer {
     font-size: 13px;
     letter-spacing: 2px;
     text-align: left
+}
+
+
+
+@media  screen and (min-width: 375px) and (max-width: 768px) {
+    
+    nav ul {
+        width: 200px;
+        display: inline-flex;
+        justify-content: space-evenly;
+    }
+
+    .buscarPorNombre input {
+        width: 250px;
+    }
+
+    .iconoDeUsuario_container {
+        width: auto;
+    }
+
+
+    footer {
+        height: auto;
+    }
+
+
+    .nuestrasRedes_container {
+        width:100%;
+    }
+
+    .nuestrasRedes_container p {
+        width: auto;
+    }
+
+    .funtube_container {
+        margin-top: 40px;
+        width: 100%; 
+    }
+
+    .funtubeLogo_container {
+        justify-content: flex-start;
+    }
+
+    .copyRight-text {
+        text-align: center;
+    }
+    
 }
 
