@@ -11,9 +11,16 @@ h2 {
     text-align: center;
 }
 
-.pagina {
+.container-register {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 400px;
 }
+
+/* .pagina {
+    display: flex;
+} */
 
 .pagina-forms .formulario {
     flex: 1;
@@ -38,23 +45,29 @@ h2 {
         padding: 5px;
         box-sizing: border-box;
     }
-    
 }
-.datos li input{
-    width: 60%;
+.datos li input {
+    width: 300px;
+    
+    height: 30px;
+    padding: 3px;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    
 }
 
 .pagina-pago {
+    color: white;
     display: flex;
     flex-direction: column;
-    flex: 1;
+   /*  flex: 1; */
     align-items: center;
     justify-content: center;
-    margin-bottom: 200px;
-
 }
 
-.metodo-pago {
+.container-metodo-pago {
     margin-bottom: 60px;
     margin-top: 60px;
     text-align: justify;
@@ -66,7 +79,35 @@ h2 {
 /* .metodo-pago ul li input{
     width: 100%;
 } */
-.pagina-pago{
+
+.datos-tarjeta {
+    padding: 20px;
+}
+
+.numerotarjeta,
+.codigotarjeta {
+    padding: 3px;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.numerotarjeta {
+    width: 270px;
+    height: 30px;
+}
+.codigotarjeta {
+    height: 30px;
+    width: 80px;
+}
+
+.checkboxes-cupon {
+    padding: 20px;
+}
+
+.pago-transferencia p {
+    padding: 20px;
 }
 
 .button-confirm {
@@ -85,4 +126,20 @@ h2 {
     padding: 10px 50px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .container-register {
+        font-size: 80%;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 400px;
+    }
+    .datos li input{
+        width: 60%;
+    }
 }
