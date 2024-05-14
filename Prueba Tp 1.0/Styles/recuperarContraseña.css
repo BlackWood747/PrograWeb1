@@ -1,34 +1,47 @@
-
+h3{
+  
+  text-align: center;
+}
+html{
+  width: 100%;
+}
+body {
+  width: 100%;
+}
 .ingresoDatos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-top: auto;
   align-items: center;
-  width: 600px;
+  
   margin: auto;
-  height: 200px;
+  
 
 
   margin-top: 110px;
-  border-style: solid;
-border-radius: 20px;
-  border-color: black;
-  border-width: 3px;
+ 
 }
 .ingresoDatos_Email {
 
-  display: block;
-  width: fit-content;
-  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+ text-align: center;
   padding-left: 70px;
 
   margin: 0 auto;
   margin-top: 40px;
 }
 .ingresoDatos_Email input {
-  margin-left: 40px;
+  
+ /* display: inline;*/
+ margin-left: 40px;
   padding: 5px;
 }
 .ingresoDatos_Usuario {
-  display: block;
+  display: flex;
   text-align: center;
   padding: 2px;
   width: fit-content;
@@ -70,3 +83,4 @@ main {
 body {
   margin: 0%;
 }
+
