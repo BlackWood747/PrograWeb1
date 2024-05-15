@@ -73,6 +73,15 @@ nav{
 
     
 }
+.button-cancel {
+    background-color: #ec3049;
+    color: white;
+    font-weight: bold;
+    padding: 7px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
 .button-confirm{
      
     background-color: #30ec39;
@@ -83,6 +92,12 @@ nav{
     cursor: pointer; 
     display: inline-block;
     align-items: center;
+}
+.submit-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 @media screen and (max-width: 768px) {
     
