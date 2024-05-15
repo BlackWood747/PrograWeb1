@@ -1,93 +1,67 @@
-.filtradoYBuscado_container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    margin-top: 10px;
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
 }
 
-.filtrarPorCategoria select {
-    width: 300px;
-    height: 28px;
-    border-radius: 25px;
-    text-decoration: none;
-    border-style: none;
+main h3 {
+    color: #fff;
     padding-left: 20px;
 }
 
-.todasLasCategorias-option {
-    color: rgba(0, 0, 0, 0.397);
-}
-
-
-.buscarPorNombre {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-
-.buscarPorNombre input {
-    width: 300px;
-    height: 28px;
-    border-radius: 25px;
-    text-decoration: none;
-    border-style: none;
-    padding-left: 20px;
-}
-
-.buscarPorNombre button {
-    background-color: #fff;
-    width: 50px;
-    height: 28px;
-    border-radius: 25px;
-    border-style: none;
-    position: absolute;
-}
-
-.caja {
-    width: 200px;
-    height: 300px;
-    margin: 10px;
-    border: 2px solid rgb(29, 27, 32);
-    background-color: gray;
+main ul {
     text-align: center;
-    line-height: 150px;
-    border-radius: 8px;
-    transition:all 1s;
-    cursor: pointer;
-}
-
-.caja:hover {
-    border: 2px solid white;
-    -webkit-box-shadow: 0px 0px 16px 2px rgb(117, 117, 117);
-    -moz-box-shadow: 0px 0px 16px 2px rgb(117, 117, 117);
-    box-shadow: 0px 0px 16px 2px rgb(117, 117, 117);
-}
-
-
-.caja img {
-    width: 200px;
-    height: 300px;
-    border-radius: 5px;
+    max-width: 450px;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
 
 }
 
-.layout {
+main ul li {
     display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
 }
 
-@media screen and (min-width: 375px) and (max-width: 768px) {
-    .filtradoYBuscado_container {
-        flex-direction: column-reverse;
-    }
+main ul li label {
+    display: inline; /* Para que los labels ocupen solo el espacio necesario */
+    text-align: right; /* Alinea el texto del label a la derecha */
+    margin-right: 10px; /* Espacio entre el label y el cuadro de entrada */
+    width: 140px;
+    color: #fff;
+}
 
-    .buscarPorNombre {
-        margin-bottom: 15px;
-    }
 
+main ul li input {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    padding: 5px; /* Espacio interno del cuadro de entrada */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+main ul li button {
+    background-color: #30b1ec;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 50px; 
+    border: none; 
+    cursor: pointer; 
+}
+
+a {
+    color: rgb(6, 68, 236);
+    transition: 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ff0000;
 }
