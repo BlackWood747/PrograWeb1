@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
     <link rel="stylesheet" href="../Styles/registrarse.css">
     <link rel="stylesheet" href="../Styles/styles.css">
-    <meta name="viewport" content="width=device-width,
+    <meta name="viewport"
+    content="width=device-width,
     initial-scale=1, maximumscale=1">
 </head>
 <header>
@@ -26,81 +26,83 @@
                 <ul class="datos">
                     <li>
                         <label for="name"> Nombre </label>
-                        <input type="text" name="nombre" id="name" placeholder="Ingrese su nombre" required>
+                        <input type="text" name="nombre" id="name" placeholder="Ingrese su nombre"
+                                required>
                     </li>
                     <li>
                         <label for="surname"> Apellido </label>
-                        <input type="text" name="apellido" id="surname" placeholder="Ingrese su apellido" required>
+                        <input type="text" name="apellido" id="surname" placeholder="Ingrese su apellido"
+                                required>
                     </li>
                     <li>
                         <label for="email"> E-mail </label>
-                        <input type="text" name="email" id="email" placeholder="Ingrese su E-mail" required>
+                        <input type="text" name="email" id="email" placeholder="Ingrese su E-mail"
+                                required>
                     </li>
                     <li>
                         <label for="usuario"> Nombre de usuario </label>
                         <input type="text" name="nombreDeUsuario" id="usuario" placeholder="Ingrese Nombre de usuario"
-                            required>
+                                required>
                     </li>
                     <li>
                         <label for="password"> Contraseña </label>
                         <input type="password" name="contraseña" id="password" placeholder="Ingrese su contraseña"
-                            required>
+                                required>
                     </li>
                     <li>
                         <label for="verifypassword"> Verificar Contraseña </label>
-                        <input type="password" name="verificarContraseña" id="verifypassword"
-                            placeholder="Verifique su contraseña" required>
+                        <input type="password" name="verificarContraseña" id="verifypassword" placeholder="Verifique su contraseña"
+                                required>
                     </li>
                 </ul>
+       
+    </div>
+    <div class="pagina-pago">
+
+
+        <div class="pago-tarjeta">
+
+        <input type="radio" id="credit-card" name="credit-card" value="credit-card">
+        <label for="credit-card">Tarjeta de credito</label>
+
+        <div class="datos-tarjeta">
+            <input class="numerotarjeta" type="text" placeholder="Numero de tarjeta">
+            <input class="codigotarjeta" type="text" placeholder="XXX">
+        </div>
+
+
+
+
+        <div class="pago-cupon">
+        <input type="radio" id="cupon"name="cupon" value="cupon">
+        <label for="cupon">Cupon de pago</label>
+
+
+        <div class="checkboxes-cupon">
+
+            <input type="checkbox" name="pagofacil">
+            <label for="pagofacil">Pago facil</label>
+            <input type="checkbox" name="RapiPago">
+            <label for="rapipago">RapiPago</label>
+        </div>
 
         </div>
-        <form class="pagina-pago">
 
-
-            <div class="pago-tarjeta">
-
-                <input type="radio" id="credit-card" name="pay-mettod" value="credit-card">
-                <label for="credit-card">Tarjeta de credito</label>
-
-                <div class="datos-tarjeta">
-                    <input class="numerotarjeta" type="text" placeholder="Numero de tarjeta">
-                    <input class="codigotarjeta" type="text" placeholder="XXX">
-                </div>
-
-
-
-
-                <div class="pago-cupon">
-                    <input type="radio" id="cupon" name="pay-mettod" value="cupon">
-                    <label for="cupon">Cupon de pago</label>
-
-
-                    <div class="checkboxes-cupon">
-
-                        <input type="checkbox" name="pagofacil">
-                        <label for="pagofacil">Pago facil</label>
-                        <input type="checkbox" name="RapiPago">
-                        <label for="rapipago">RapiPago</label>
-                    </div>
-
-                </div>
-
-                <div class="pago-transferencia">
-                    <input type="radio" id="transferencia" name="pay-mettod" value="transferencia">
-                    <label for="transferencia">Transferencia</label>
-                    <p>CBU: 85487632481526987</p>
-
-
-                </div>
-                <button class="button-confirm" type="sumbit">
-                    Confirmar
-                </button>
-                <button class="button-cancel" type="sumbit"> Cancelar </button>
+        <div class="pago-transferencia">
+            <input type="radio" id="transferencia"name="transferencia" value="transferencia">
+            <label for="transferencia">Transferencia</label>
+            <p>CBU: 85487632481526987</p>
+    
+    
             </div>
-        </form>
+            <button class="button-confirm" type="sumbit">
+                Confirmar
+            </button>  
+            <button class="button-cancel" type="sumbit"> Cancelar </button>
+    </div>
 
-
-            <!--     <ul class="container-metodo-pago">
+               
+     <!--     <ul class="container-metodo-pago">
             <h3> Metodo de pago </h3>
             
             <li>
@@ -123,15 +125,14 @@
             Confirmar
         </button>  -->
 
-            <!--  </form>
+   <!--  </form>
     <form action="./logIn.html" method="get">
         <button class="button-cancel" type="sumbit"> Cancelar </button>
     </form> -->
-        </div>
-    </div>
+</div>
+</div>
 
-
+    
 </main>
 </body>
-
 </html>

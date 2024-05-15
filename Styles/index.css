@@ -2,12 +2,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    
-}
-
-main h3 {
-    color: #fff;
-    padding-left: 20px;
 }
 
 main ul {
@@ -35,7 +29,6 @@ main ul li label {
     text-align: right; /* Alinea el texto del label a la derecha */
     margin-right: 10px; /* Espacio entre el label y el cuadro de entrada */
     width: 140px;
-    color: #fff;
 }
 
 
@@ -49,19 +42,10 @@ main ul li input {
 
 main ul li button {
     background-color: #30b1ec;
-    color: #fff;
+    color: white;
     font-weight: bold;
     font-size: 16px;
     padding: 10px 50px; 
     border: none; 
     cursor: pointer; 
-}
-
-a {
-    color: rgb(6, 68, 236);
-    transition: 0.3s ease-in-out;
-}
-
-a:hover {
-    color: #ff0000;
 }
