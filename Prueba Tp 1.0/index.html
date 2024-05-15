@@ -20,12 +20,6 @@
             <li><a href="./HTML/peliculas.html">Peliculas</a></li>
         </ul>
 
-        <div class="buscarPorNombre">
-
-            <input placeholder="Buscar por nombre" type="text">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-
         <div class="iconoDeUsuario_container">
             <div class="iconoDeUsuario">
                 <a href="/Prueba Tp 1.0/HTML/perfil.html">
@@ -37,6 +31,26 @@
     </nav>
 
     <section id="contenido">
+
+        <div class="filtradoYBuscado_container">
+
+            <div class="filtrarPorCategoria">
+
+                <select name="categoria" id="categoria">
+                    <option value="accion">Accion</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedia">Comedia</option>
+                    <option value="todasLasCategorias" selected>Todas las categorias</option>
+                </select>
+            </div>
+
+            <div class="buscarPorNombre">
+
+                <input placeholder="Buscar por nombre" type="text">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+
         <div class="layout">
 
             <div class="caja">

@@ -20,20 +20,37 @@
             <li><a href="./peliculas.html">Peliculas</a></li>
         </ul>
 
-        <div class="buscarPorNombre">
-
-            <input placeholder="Buscar por nombre" type="text">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-
         <div class="iconoDeUsuario_container">
             <div class="iconoDeUsuario">
-                <img src="/Prueba Tp 1.0/Src Img/perfil-foto.jpg" alt="">
+                <a href="/Prueba Tp 1.0/HTML/perfil.html">
+                    <img src="/Prueba Tp 1.0/Src Img/perfil-foto.jpg" alt="">
+                </a>
+             
             </div>
         </div>
     </nav>
 
     <section id="contenido">
+
+        <div class="filtradoYBuscado_container">
+
+            <div class="filtrarPorCategoria">
+
+                <select name="categoria" id="categoria">
+                    <option value="accion">Accion</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedia">Comedia</option>
+                    <option value="todasLasCategorias" selected>Todas las categorias</option>
+                </select>
+            </div>
+
+            <div class="buscarPorNombre">
+
+                <input placeholder="Buscar por nombre" type="text">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+
         <div class="layout">
 
             <div class="caja">
@@ -70,8 +87,48 @@
 
         </div>
     </section>
+    <div class="lineaFooter"></div>
     <footer>
-        <p>Derechos de autor © 2024 Mi Página Web. Todos los derechos reservados.</p>
+        <div class="nuestrasRedes_container">
+            <div class="nuestrasRedesTextoIconos_container">
+                <h3>Nuestras Redes</h3>
+
+                <p>Visita nuestras redes para enterarte de todas nuestras noticias sobre ingesos de peliculas, series y mucho mas!</p>
+                <p>Tambien podes contactanos a traves de ellas!</p>
+    
+                <div class="iconosDeRedes_container">
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+    
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+    
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+    
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+    
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="funtube_container">
+            <div class="funtubeLogo_container">
+                <h1>FUN TUBE</h1>
+                <p class="logoSlogan">Series y peliculas en stream</p>
+            </div>
+
+            <p class="copyRight-text">Derechos de autor © 2024 Mi Página Web. Todos los derechos reservados.</p>
+        </div>
+        
     </footer>
 </body>
 </html>

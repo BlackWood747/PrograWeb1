@@ -1,3 +1,51 @@
+.filtradoYBuscado_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    margin-top: 10px;
+
+}
+
+.filtrarPorCategoria select {
+    width: 300px;
+    height: 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    border-style: none;
+    padding-left: 20px;
+}
+
+.todasLasCategorias-option {
+    color: rgba(0, 0, 0, 0.397);
+}
+
+
+.buscarPorNombre {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.buscarPorNombre input {
+    width: 300px;
+    height: 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    border-style: none;
+    padding-left: 20px;
+}
+
+.buscarPorNombre button {
+    background-color: #fff;
+    width: 50px;
+    height: 28px;
+    border-radius: 25px;
+    border-style: none;
+    position: absolute;
+}
+
 .caja {
     width: 200px;
     height: 300px;
@@ -31,4 +79,15 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 50px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 768px) {
+    .filtradoYBuscado_container {
+        flex-direction: column-reverse;
+    }
+
+    .buscarPorNombre {
+        margin-bottom: 15px;
+    }
+
 }
