@@ -108,6 +108,15 @@ nav{
         justify-content: flex-end;
         align-items: flex-end;
   
-}
+    }
+
+    .submit-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        overflow: hidden;
+    }
 
 }
