@@ -82,7 +82,8 @@ nav {
     border-radius: 5px;
 
 }
-@media screen  and (max-width: 900px){
+
+@media screen  and (max-width: 600px){
     .Descripcion-pelicula{
      flex-direction: column;
      align-items: center;
@@ -96,7 +97,8 @@ nav {
      display: block;
      align-content: center;
     }
-    caja-1{ background-color: red;
+    .caja-1{
+        margin: 0px;
         iframe {
             width: 50%;
         }
@@ -105,6 +107,43 @@ nav {
     .caja-2{
      width: 90%;
      align-items:flex-start;
+    }
+
+    .Descripcion-pelicula iframe{
+        margin: 0px;
+        width: auto;
+        height: 30vh;
+    }
+ }
+
+ @media screen  and (max-width: 900px){
+    .Descripcion-pelicula{
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+    } 
+    .peliculas-similares{
+     flex-direction: column;
+     align-items: center;
+    }
+    .btn-irapelicula{
+     display: block;
+     align-content: center;
+    }
+    .caja-1{
+        margin: 0px;
+        iframe {
+            width: 50%;
+        }
+        width: 100%;
+    }
+    .caja-2{
+     width: 90%;
+     align-items:flex-start;
+    }
+
+    .Descripcion-pelicula iframe{
+        width: 90%;
     }
  }
  
