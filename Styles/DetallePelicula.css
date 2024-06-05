@@ -1,3 +1,6 @@
+html{
+    width: 100%;
+}
 nav {
     justify-content: space-between;
 }
@@ -93,15 +96,11 @@ nav {
      display: block;
      align-content: center;
     }
-    .caja-1{
-     align-items: left;
-     width: 100%;
-     iframe{
-        
-         width: 100%;
-         align-items: center;
-     }
-     
+    caja-1{ background-color: red;
+        iframe {
+            width: 50%;
+        }
+        width: 100%;
     }
     .caja-2{
      width: 90%;

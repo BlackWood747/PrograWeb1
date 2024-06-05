@@ -105,9 +105,26 @@ nav{
     }
   
     .email {
-        justify-content: flex-end;
+        text-align: center;
         align-items: flex-end;
   
+    }
+    .contraseña{
+        input{
+            margin: 0;
+            display: block;
+        }
+        li{
+            text-align: center;
+            display: block;
+        }
+        text-align: center;
+    }
+    .pago-tarjeta{
+        align-items: center;
+    }
+    .metododepago{
+    text-align: center;
     }
 
     .submit-info {
