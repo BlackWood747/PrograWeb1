@@ -80,4 +80,24 @@ body {
   margin: 0%;
 }
 
-
+@media screen and (min-width: 200px) and (max-width: 400px){
+  .ingresoDatos_Email{
+    padding-left: 0;
+    align-items: center;
+    input {
+      margin-left: 10px;
+      display: block;
+    }
+  }
+  .ingresoDatos_Usuario {
+    input{
+    }
+  }
+  .btn_submit{
+    display: block;
+    margin-bottom: 20px;
+  }
+  .btn_warning{
+    margin: 0;
+  }
+}
