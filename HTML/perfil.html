@@ -1,13 +1,14 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Styles/styles.css">
     <link rel="stylesheet" href="/Styles/perfil.css">
     <script src="https://kit.fontawesome.com/eb2631301b.js" crossorigin="anonymous"></script>
-    
+
     <title>Perfil</title>
-    
+
 </head>
 
 <body>
@@ -15,145 +16,170 @@
     <header>
         <h1>FUNTUBE</h1>
         <h3>Series y peliculas en stream</h3>
-</header>
-<nav> 
-    <ul>
-        <li><a href="/HTML/home.html">Inicio</a></li>
-        <li><a href="/HTML/perfil.html">Perfil</a></li>
-
-    </ul>
-</nav>
-
-    
-<section class="todosLosDatos"> 
-      <div class="nombreyfoto">
-        
-            
-        <img src="/Src Img/fotoperfil.png" alt="">
-         <p>Juan</p>
-      </div>  
-              
-           
-      <div class="emailYContraseña">  
+    </header>
+    <nav>
         <ul>
-            <div class="email">
-                 <li>email</li>
-            <li>juan12345@gmail.com</li>
-            </div>
-           <div class="contraseña">
-            <li>contraseña</li>
-            <li>**********</li>
-          
-           
-            <form action="/HTML/perfil.html" method="get">
-            <li class="li-nuevacontraseña"> <label for="nueva contraseña">nueva contraseña</label>
-            <input type="password" name="nueva contraseña" id="nueva contraseña" placeholder="nueva contraseña">
-        </li>
-        <li id="confirmcontraseña"><label for="confirmar contraseña">
-        confirmar contraseña </label>
-        <input type="password" name="confirmar contraseña" id="confirmar contraseña" placeholder="confirme la contraseña">
-   
-</li> </div>
+            <li><a href="/HTML/home.html">Inicio</a></li>
+            <li><a href="/HTML/perfil.html">Perfil</a></li>
+
         </ul>
-       </div>   
-     
-       <div class="metododepago">
+    </nav>
 
 
-        <div class="pago-tarjeta">
-
-        <input type="radio" id="credit-card" name="pay-mettod" value="credit-card">
-        <label for="credit-card">Tarjeta de credito</label>
-
-        <div class="datos-tarjeta">
-            <input class="numerotarjeta" type="text" placeholder="Numero de tarjeta">
-            <input class="codigotarjeta" type="text" placeholder="XXX">
-        </div>
-</div>
+    <section class="todosLosDatos">
+        <div class="nombreyfoto">
 
 
-
-        <div class="pago-cupon">
-        <input type="radio" id="cupon"name="pay-mettod" value="cupon">
-        <label for="cupon">Cupon de pago</label>
-
-
-        <div class="checkboxes-cupon">
-
-            <input type="checkbox" name="pagofacil">
-            <label for="pagofacil">Pago facil</label>
-            <input type="checkbox" name="RapiPago">
-            <label for="rapipago">RapiPago</label>
+            <img src="/Src Img/fotoperfil.png" alt="">
+            <p>Juan</p>
         </div>
 
+
+        <div class="emailYContraseña">
+            <ul>
+                <div class="email">
+                    <li>Email:</li>
+                    <li>juan12345@gmail.com</li>
+                </div>
+                <div class="contraseña">
+                    <li>Contraseña:</li>
+                    <li>**********</li>
+
+
+                    <form class="nuevaContrasena_form" action="/HTML/perfil.html" method="get">
+                        <li class="li-nuevacontraseña"> <label for="nueva contraseña">Nueva contraseña</label>
+                            <input type="password" name="nueva contraseña" id="nueva contraseña"
+                                placeholder="Escriba una contraseña">
+                        </li>
+                        <li id="confirmcontraseña"><label for="confirmar contraseña">
+                                Confirmar contraseña </label>
+                            <input type="password" name="confirmar contraseña" id="confirmar contraseña"
+                                placeholder="Confirme la contraseña">
+
+                        </li>
+                </div>
+            </ul>
         </div>
 
-        <div class="pago-transferencia">
-            <input type="radio" id="transferencia"name="pay-mettod" value="transferencia">
-            <label for="transferencia">Transferencia</label>
-            <p>CBU: 85487632481526987</p>
+        <div class="metododepago">
+
+
+            <div class="pago-tarjeta">
+
+                <div class="centrado-radioYLabel">
+                    <input type="radio" id="credit-card" name="pay-mettod" value="credit-card">
+                    <label for="credit-card">Tarjeta de credito</label>
+                </div>
+                <!-- <input type="radio" id="credit-card" name="pay-mettod" value="credit-card">
+                <label for="credit-card">Tarjeta de credito</label> -->
+
+                <div class="datos-tarjeta">
+                    <input class="numerotarjeta" type="text" placeholder="Numero de tarjeta">
+                    <input class="codigotarjeta" type="text" placeholder="XXX">
+                </div>
+            </div>
+
+
+
+            <div class="pago-cupon">
+
+                <div class="centrado-radioYLabel">
+                    <input type="radio" id="cupon" name="pay-mettod" value="cupon">
+                    <label for="cupon">Cupon de pago</label>
+                </div>
+
+
+            </div>
+            <!-- <input type="radio" id="cupon"name="pay-mettod" value="cupon">
+            <label for="cupon">Cupon de pago</label> -->
+
+
+            <div class="checkboxes-cupon">
+
+                <input type="checkbox" name="pagofacil">
+                <label for="pagofacil">Pago facil</label>
+                <input type="checkbox" name="RapiPago">
+                <label for="rapipago">RapiPago</label>
+            </div>
+
+
+            <div class="pago-transferencia">
+
+                <div class="centrado-radioYLabel">
+                    <input type="radio" id="transferencia" name="pay-mettod" value="transferencia">
+                    <label for="transferencia">Transferencia</label>
     
+                </div>
     
+                <p>CBU: 85487632481526987</p>
+                <!-- <input type="radio" id="transferencia"name="pay-mettod" value="transferencia">
+                <label for="transferencia">Transferencia</label>
+                <p>CBU: 85487632481526987</p> -->
+    
+            </div>
+
+        </div>
+
         
-
-    </div> 
-      <div class="submit-info">
-<button class="button-confirm" type="sumbit">
-            Guardar cambios
-        </button>
-        <a class="button-cancel" href="../index.html">Cancelar subscripcion</a></form>
-      </div>
+        <div class="submit-info">
+            <button class="button-confirm" type="sumbit">
+                Guardar cambios
+            </button>
+            <a class="button-cancel" href="../index.html">Cancelar subscripcion</a></form>
+        </div>
 
 
-</form>
-</div> 
+        </form>
+        </div>
 
-</div>
-</section>
-<div class="lineaFooter"></div>
-<footer>
-    <div class="nuestrasRedes_container">
-        <div class="nuestrasRedesTextoIconos_container">
-            <h3>Nuestras Redes</h3>
+        </div>
+    </section>
+    <div class="lineaFooter"></div>
+    <footer>
+        <div class="nuestrasRedes_container">
+            <div class="nuestrasRedesTextoIconos_container">
+                <h3>Nuestras Redes</h3>
 
-            <p>Visita nuestras redes para enterarte de todas nuestras noticias sobre ingesos de peliculas, series y mucho mas!</p>
-            <p>Tambien podes contactanos a traves de ellas!</p>
+                <p>Visita nuestras redes para enterarte de todas nuestras noticias sobre ingesos de peliculas, series y
+                    mucho mas!</p>
+                <p>Tambien podes contactanos a traves de ellas!</p>
 
-            <div class="iconosDeRedes_container">
-                <div class="circulosIconosDeRedes">
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
+                <div class="iconosDeRedes_container">
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
 
-                <div class="circulosIconosDeRedes">
-                    <i class="fa-brands fa-facebook"></i>
-                </div>
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
 
-                <div class="circulosIconosDeRedes">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </div>
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
 
-                <div class="circulosIconosDeRedes">
-                    <i class="fa-brands fa-tiktok"></i>
-                </div>
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
 
-                <div class="circulosIconosDeRedes">
-                    <i class="fa-regular fa-envelope"></i>
+                    <div class="circulosIconosDeRedes">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="funtube_container">
-        <div class="funtubeLogo_container">
-            <h1>FUN TUBE</h1>
-            <p class="logoSlogan">Series y peliculas en stream</p>
+        <div class="funtube_container">
+            <div class="funtubeLogo_container">
+                <h1>FUN TUBE</h1>
+                <p class="logoSlogan">Series y peliculas en stream</p>
+            </div>
+
+            <p class="copyRight-text">Derechos de autor © 2024 Mi Página Web. Todos los derechos reservados.</p>
         </div>
 
-        <p class="copyRight-text">Derechos de autor © 2024 Mi Página Web. Todos los derechos reservados.</p>
-    </div>
-    
-</footer>
-   
- 
+    </footer>
+
+
 </body>
+
 </html>

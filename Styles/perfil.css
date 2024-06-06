@@ -36,7 +36,7 @@ nav{
  
     }
     .email{
-        
+        margin-bottom: 20px;
         li {
             display: inline;
         
@@ -52,19 +52,31 @@ nav{
     }
 }
 
+.centrado-radioYLabel{
+    margin-bottom: 10px;
+}
+
 .emailYContraseña ul {
     padding: 0;
 }
 
 
-.metododepago {
+.metododepago { width: 35%;
    ul {
      list-style: none;
    }
 }
+
+.pago-tarjeta{
+    margin-bottom: 20px;
+}
+
+.checkboxes-cupon {
+    margin-bottom: 25px;
+}
    
 .li-nuevacontraseña input{
-    margin-left: 23px;
+    margin-left: 25px;
 }
   
 .nombreyfoto {
@@ -109,7 +121,7 @@ nav{
         align-items: flex-end;
   
     }
-    .contraseña{
+    .contraseña{ margin-top: 15px;
         input{
             margin: 0;
             display: block;
@@ -117,16 +129,54 @@ nav{
         li{
             text-align: center;
             display: block;
+            margin-bottom: 15px;
         }
         text-align: center;
     }
+
+    .nuevaContrasena_form{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nuevaContrasena_form input {
+        margin-top: 10px;
+    }
+
+    .metododepago {
+        width: auto;
+    }
+
     .pago-tarjeta{
         align-items: center;
     }
     .metododepago{
     text-align: center;
+    margin-top: 50px;
     }
 
+    .centrado-radioYLabel{
+        display: flex;
+        margin: 0 auto;
+        width: 200px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .pago-cupon{
+        margin-top: 30px;
+    }
+
+    .pago-transferencia{
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .pago-transferencia p{
+        text-align: center;
+    }
     .submit-info {
         display: flex;
         flex-wrap: wrap;
