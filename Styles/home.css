@@ -90,4 +90,12 @@
         margin-bottom: 15px;
     }
 
+    .buscarPorNombre input {
+        width: 250px;
+    }
+
+    .filtrarPorCategoria select {
+        width: 270px
+    }
+
 }
