@@ -29,6 +29,7 @@ h2 {
         align-items: center;
         margin-bottom: 10px;
         margin-top: 10px;
+        width: fit-content;
     }
 
     ul li label {
@@ -46,6 +47,24 @@ h2 {
         box-sizing: border-box;
     }
 }
+
+.contrasena_li i {
+    position: absolute;
+}
+
+.verificarContrasena_li i {
+    position: absolute;
+}
+
+.fa-circle-xmark {
+    color: #ec3049;
+}
+
+.fa-circle-check {
+    color: #30ec39;
+}
+
+
 .datos li input {
     width: 300px;
     
