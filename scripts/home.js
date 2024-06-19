@@ -27,26 +27,20 @@ const layout = document.querySelector('.layout');
 const dibujarLista = (lista) => {
     layout.innerHTML = '';
     lista.forEach((i) => {
-        // Crear el elemento div
         const cajaElement = document.createElement('div');
         cajaElement.classList.add('caja');
 
-        // Crear el elemento a y agregar el atributo href
         const linkElement = document.createElement('a');
         linkElement.href = `./detallesDePeliculas/${i.detalle}`;
 
-        // Crear el elemento img y establecer los atributos
         const imgElement = document.createElement('img');
         imgElement.src = i.img;
         imgElement.alt = i.titulo;
 
-        // Agregar el elemento img al elemento a
         linkElement.appendChild(imgElement);
 
-        // Agregar el elemento a al elemento div
         cajaElement.appendChild(linkElement);
 
-        // Agregar el elemento div al elemento layout
         layout.appendChild(cajaElement);
     });
 };
@@ -93,5 +87,4 @@ selectGenero.addEventListener('change', (e) => {
     console.log(e.target.value);
     dibujarLista(listaFiltrada);
 
-    /* dibujarLista(e.target.value); */
 });
