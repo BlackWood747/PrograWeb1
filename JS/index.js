@@ -10,6 +10,7 @@ let nombreDeUsuario_input = document.querySelector('#usuario');
 function guardarNombreDeUsuarioEnLocalStorage() {
     
     let nombreDeUsuario = nombreDeUsuario_input.value;
+    console.log(nombreDeUsuario);
     localStorage.setItem("nombreDeUsuario", nombreDeUsuario);
 }
 
