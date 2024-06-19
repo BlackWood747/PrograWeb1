@@ -2,6 +2,9 @@ import { listaPeliculasSeries } from './dataPeliculas.js';
 ('use strict');
 
 const cerrarSesionBtn = document.querySelector('.cerrarSesion');
+const linkPeliculasBtn = document.querySelector('.linkPeliculas');
+const linkSeriesBtn = document.querySelector('.linkSeries');
+const linkHomeBtn = document.querySelector('.linkHome');
 
 const preguntarSiHayUsuario = () => {
     if (!localStorage.getItem('nombreDeUsuario')) {
@@ -22,7 +25,7 @@ cerrarSesionBtn.addEventListener('click', function () {
 const layout = document.querySelector('.layout');
 
 const dibujarLista = (lista) => {
-    layout.innerHTML = ""
+    layout.innerHTML = '';
     lista.forEach((i) => {
         // Crear el elemento div
         const cajaElement = document.createElement('div');
@@ -49,17 +52,42 @@ const dibujarLista = (lista) => {
 };
 dibujarLista(listaPeliculasSeries);
 
-const selectCategoria = document.querySelector('.selectCategoria');
+const selectGenero = document.querySelector('.selectGenero');
 
 const filtrarPorGenero = (genero) => {
-   let listaFiltrada= listaPeliculasSeries.filter((i) => {
-       return i.genero == genero;
-    });
-    console.log(listaFiltrada)
-    return listaFiltrada
+    if (genero == 'todosLosGeneros') {
+        return listaPeliculasSeries;
+    } else {
+        let listaFiltrada = listaPeliculasSeries.filter((i) => {
+            return i.genero == genero;
+        });
+        console.log(listaFiltrada);
+        return listaFiltrada;
+    }
 };
 
-selectCategoria.addEventListener('change', (e) => {
+const filtrarPorCategoria = (cat) => {
+    let listaFiltrada = listaPeliculasSeries.filter((i) => {
+        return i.categoria == cat;
+    });
+    return listaFiltrada;
+};
+
+linkPeliculasBtn.addEventListener('click', (e) => {
+    let listaFiltrada = filtrarPorCategoria('pelicula');
+    dibujarLista(listaFiltrada);
+});
+
+linkSeriesBtn.addEventListener('click', (e) => {
+    let listaFiltrada = filtrarPorCategoria('serie');
+    dibujarLista(listaFiltrada);
+});
+
+linkHomeBtn.addEventListener('click', (e) => {
+    dibujarLista(listaPeliculasSeries);
+});
+
+selectGenero.addEventListener('change', (e) => {
     let listaFiltrada = filtrarPorGenero(e.target.value);
     console.log(listaFiltrada);
     console.log(e.target.value);

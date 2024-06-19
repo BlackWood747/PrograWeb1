@@ -2,6 +2,7 @@
 const listaPeliculasSeries = [
     {
         titulo: 'Neighbors',
+        categoria: 'pelicula',
         duracion: '97 minutos',
         genero: 'comedia',
         detalle: 'neighbors.html',
@@ -21,6 +22,8 @@ const listaPeliculasSeries = [
     {
         titulo: 'Superbad',
         duracion: '118 minutos',
+        categoria: 'pelicula',
+
         genero: 'comedia',
         detalle: 'superbad.html',
         descripción:
@@ -36,6 +39,7 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'The hangover',
+        categoria: 'pelicula',
         duracion: '100 minutos',
         genero: 'comedia' /*Actores :[],*/,
         detalle: 'thehangover.html',
@@ -51,6 +55,7 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'The Joker',
+        categoria: 'pelicula',
         duracion: '122 minutos',
         genero: 'drama',
         detalle: 'thejoker.html',
@@ -61,6 +66,7 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'The Office',
+        categoria: 'serie',
         duracion: '22 minutos por episodio',
         genero: 'comedia',
         detalle: 'theoffice.html',
@@ -71,6 +77,7 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'Relatos Salvajes',
+        categoria: 'pelicula',
         duracion: '122 minutos',
         genero: 'drama',
         detalle: 'relatossalvajes.html',
@@ -81,6 +88,7 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'Interestelar',
+        categoria: 'pelicula',
         duracion: '169 minutos',
         detalle: 'interestelar.html',
         genero: 'cienciaFiccion',
@@ -90,6 +98,7 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'Regular Show',
+        categoria: 'serie',
         duracion: '11 minutos por episodio',
         genero: 'comedia',
         detalle: 'regularShow.html',
@@ -100,6 +109,7 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'Taxi Driver',
+        categoria: 'pelicula',
         duracion: '113 minutos',
         genero: 'drama',
         detalle: 'taxiDriver.html',
@@ -111,6 +121,7 @@ const listaPeliculasSeries = [
 
     {
         titulo: 'Rápido y Furioso 1',
+        categoria: 'pelicula',
         duracion: '100 minutos',
         genero: 'acción',
         descripción:
@@ -120,6 +131,7 @@ const listaPeliculasSeries = [
     {
         titulo: 'The Walking Dead',
         duracion: '42-60 minutos por episodio',
+        categoria: 'serie',
         genero: 'terror',
         descripción:
             'The Walking Dead sigue a un grupo de sobrevivientes liderados por el oficial de policía Rick Grimes, mientras navegan por un mundo post-apocalíptico infestado de zombis. A medida que avanzan, el grupo se enfrenta a los desafíos de sobrevivir en un mundo devastado, las luchas internas dentro del grupo y las amenazas de otros sobrevivientes hostiles.',
@@ -128,6 +140,7 @@ const listaPeliculasSeries = [
     {
         titulo: 'Tom y Jerry',
         duracion: '6-8 minutos por episodio',
+        categoria: 'serie',
         genero: 'comedia',
         descripción:
             'Tom y Jerry es una serie de cortos de animación que sigue las hilarantes persecuciones entre Tom, un gato doméstico, y Jerry, un ratón travieso. A pesar de los numerosos intentos de Tom por atrapar a Jerry, este logra escapar usando su ingenio y astucia, dando lugar a divertidas escenas llenas de slapstick y acción cómica.',
@@ -136,6 +149,7 @@ const listaPeliculasSeries = [
     {
         titulo: 'Vikings',
         duracion: '45-60 minutos por episodio',
+        categoria: 'serie',
         genero: 'accion',
         descripción:
             'Vikings narra la historia del legendario caudillo vikingo Ragnar Lothbrok y su familia. La serie sigue las aventuras de Ragnar mientras asciende desde ser un simple granjero hasta convertirse en un poderoso rey, liderando incursiones y expediciones de conquista a través del Mar Báltico. La serie explora la cultura, las creencias y los conflictos de la sociedad vikinga durante la Edad Media.',
@@ -144,6 +158,7 @@ const listaPeliculasSeries = [
     {
         titulo: 'Click',
         duracion: '107 minutos',
+        categoria: 'pelicula',
         genero: 'comedia',
         descripción:
             'Click narra la historia de Michael Newman, un arquitecto que constantemente se encuentra abrumado por su trabajo y su familia. Un día, en una tienda, encuentra un control remoto universal mágico que le permite manipular el tiempo a su antojo. Inicialmente, Michael utiliza el control para ahorrar tiempo y mejorar su vida, pero pronto se da cuenta de que sus acciones tienen consecuencias inesperadas.',
@@ -153,6 +168,7 @@ const listaPeliculasSeries = [
     {
         titulo: 'American Made',
         duracion: '115 minutos',
+        categoria: 'pelicula',
         genero: 'accion, ',
         descripción:
             'American Made narra la historia de Barry Seal, un piloto comercial que es reclutado por la CIA para llevar a cabo operaciones encubiertas en Centroamérica durante la década de 1980. A medida que Seal se involucra cada vez más en el tráfico de armas y drogas, su vida se vuelve cada vez más peligrosa y complicada, atrapado entre los carteles de la droga, el gobierno y sus propias ambiciones.',
@@ -161,6 +177,7 @@ const listaPeliculasSeries = [
     {
         titulo: 'Superbad',
         duracion: '118 minutos',
+        categoria: 'pelicula',
         genero: 'comedia ',
         descripción:
             'La trama sigue a dos amigos, Evan y Seth, que están a punto de separarse después de graduarse de la escuela secundaria y asistir a universidades diferentes. Para celebrar su último fin de semana juntos, planean organizar una fiesta en la casa de Seth, pero las cosas se complican cuando descubren que no tienen permiso para vender alcohol y deben encontrar una forma de obtenerlo.',
