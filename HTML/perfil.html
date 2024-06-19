@@ -1,5 +1,6 @@
+<!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,15 +48,15 @@
 
 
                     <form class="nuevaContrasena_form" action="/HTML/perfil.html" method="get">
-                        <li class="li-nuevacontraseña"> <label for="nueva contraseña">Nueva contraseña</label>
-                            <input type="password" name="nueva contraseña" id="nueva contraseña"
+                        <li class="li-nuevacontraseña"> <label for="nuevaContraseña">Nueva contraseña</label>
+                            <input type="password" name="nuevaContraseña" id="nuevaContraseña"
                                 placeholder="Escriba una contraseña">
                         </li>
-                        <li id="confirmcontraseña"><label for="confirmar contraseña">
+                        <li id="confirmcontraseña"><label for="confirmarContraseña">
                                 Confirmar contraseña </label>
-                            <input type="password" name="confirmar contraseña" id="confirmar contraseña"
+                            <input type="password" name="confirmarContraseña" id="confirmarContraseña"
                                 placeholder="Confirme la contraseña">
-
+                              <p class="is-hidden"></p>      
                         </li>
                 </div>
             </ul>
@@ -74,8 +75,11 @@
                 <label for="credit-card">Tarjeta de credito</label> -->
 
                 <div class="datos-tarjeta">
-                    <input class="numerotarjeta" type="text" placeholder="Numero de tarjeta">
-                    <input class="codigotarjeta" type="text" placeholder="XXX">
+                    <label for="numerotarjeta">Numero Tarjeta</label>
+                    <input class="numerotarjeta" type="text" placeholder="Numero de tarjeta"
+                    name="numerotarjeta" id="numerotarjeta">
+                    <label for="codigotarjeta"></label>
+                    <input class="codigotarjeta" type="text" placeholder="XXX" name="codigotarjeta" id="codigotarjeta">
                 </div>
             </div>
 
@@ -95,11 +99,11 @@
 
 
             <div class="checkboxes-cupon">
-
-                <input type="checkbox" name="pagofacil">
-                <label for="pagofacil">Pago facil</label>
-                <input type="checkbox" name="RapiPago">
-                <label for="rapipago">RapiPago</label>
+                <label for="pagoFacil">Pago facil</label>
+                <input type="checkbox" name="pagoFacil" id="pagoFacil">
+               <label for="rapiPago">RapiPago</label>
+                <input type="checkbox" name="rapiPago" id="rapiPago">
+                
             </div>
 
 
@@ -179,7 +183,7 @@
 
     </footer>
 
-
+<script src="../scripts/perfil.js"></script>
 </body>
 
 </html>

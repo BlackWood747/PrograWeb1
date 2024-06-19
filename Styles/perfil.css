@@ -185,5 +185,7 @@ nav{
         padding: 10px;
         overflow: hidden;
     }
-
+.is-hidden{
+    display: none;
+}
 }
