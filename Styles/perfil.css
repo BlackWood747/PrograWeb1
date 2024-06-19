@@ -42,11 +42,14 @@ nav{
         
         }
     }
+    #confirmarContraseña{
+        margin-left: 25px;
+    }
     .contraseña {
        
     
       
-       li {display: inline
+       li {display: block
         
        
     }
@@ -76,7 +79,7 @@ nav{
 }
    
 .li-nuevacontraseña input{
-    margin-left: 25px;
+    margin-left: 49px;
 }
   
 .nombreyfoto {
@@ -109,6 +112,15 @@ nav{
     display: inline-block;
     align-items: center;
 }
+.button-confirm:disabled {
+        background-color: #CCCCCC; 
+        color: #666666;
+        opacity: 0.7;
+      
+    }
+    .confirmcontraseña{
+        display: block;
+    }
 @media screen and (max-width: 768px) {
     
     .todosLosDatos{
@@ -177,6 +189,7 @@ nav{
     .pago-transferencia p{
         text-align: center;
     }
+    
     .submit-info {
         display: flex;
         flex-wrap: wrap;
@@ -185,7 +198,5 @@ nav{
         padding: 10px;
         overflow: hidden;
     }
-.is-hidden{
-    display: none;
-}
+
 }
