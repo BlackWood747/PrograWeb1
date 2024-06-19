@@ -292,6 +292,16 @@ validarNumeroTarjeta();
 
 let formulario = document.querySelector(".formulario")
 
+function guardarNombreDeUsuarioEnLocalStorage() {
+    
+    localStorage.setItem("nombreDeUsuario", usuario_input.value);
+}
+
+function guardarContrasenaEnLocalStorage() {
+    
+    localStorage.setItem("contrasena", contrasena_input.value);
+}
+
 // Funcion que previene que no se envien los datos del formulario si la contraseña no es valida o si la contraseña verificada no es igual a la que se introdujo
 function formularioPrevent(event) {
 
@@ -317,6 +327,16 @@ function formularioPrevent(event) {
         alert("Debe seleccionar al menos un metodo de pago antes de enviar el formulario.");
 
     }
+
+    if (usuario_input.value === localStorage.getItem("nombreDeUsuario")) {
+        
+        event.preventDefault();
+        alert("Ese nombre de usuario ya existe!");
+    } else {
+        guardarNombreDeUsuarioEnLocalStorage();
+        guardarContrasenaEnLocalStorage();
+    }
+    
 }
 
 // Ejecucion de la funcion para prevenir que al enviar los datos del formulario con las contraseñas mal, no se envien los datos
