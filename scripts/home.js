@@ -5,6 +5,7 @@ const cerrarSesionBtn = document.querySelector('.cerrarSesion');
 const linkPeliculasBtn = document.querySelector('.linkPeliculas');
 const linkSeriesBtn = document.querySelector('.linkSeries');
 const linkHomeBtn = document.querySelector('.linkHome');
+const inputBuscador = document.querySelector('.inputBuscador');
 
 let gen = 'todos';
 let cat = 'todos';
@@ -28,52 +29,43 @@ cerrarSesionBtn.addEventListener('click', function () {
 const layout = document.querySelector('.layout');
 
 const dibujarLista = (lista) => {
-    layout.innerHTML = '';
-    lista.forEach((i) => {
-        const cajaElement = document.createElement('div');
-        cajaElement.classList.add('caja');
+    if ((!lista || lista.length === 0)) {
+        layout.innerHTML = '';
 
-        const linkElement = document.createElement('a');
-        linkElement.href = `./detallesDePeliculas/${i.detalle}`;
+        console.log('No encontrado');
+        const h = document.createElement('h2')
+        h.textContent= "No encontrado"
+        layout.appendChild(h)
 
-        const imgElement = document.createElement('img');
-        imgElement.src = i.img;
-        imgElement.alt = i.titulo;
+    } else {
+        layout.innerHTML = '';
+        lista.forEach((i) => {
+            const cajaElement = document.createElement('div');
+            cajaElement.classList.add('caja');
 
-        linkElement.appendChild(imgElement);
+            const linkElement = document.createElement('a');
+            linkElement.href = `./detallesDePeliculas/${i.detalle}`;
 
-        cajaElement.appendChild(linkElement);
+            const imgElement = document.createElement('img');
+            imgElement.src = i.img;
+            imgElement.alt = i.titulo;
 
-        layout.appendChild(cajaElement);
-    });
+            linkElement.appendChild(imgElement);
+
+            cajaElement.appendChild(linkElement);
+
+            layout.appendChild(cajaElement);
+        });
+    }
 };
 dibujarLista(listaPeliculasSeries);
 
 const selectGenero = document.querySelector('.selectGenero');
 
-const filtrarPorGenero = (genero) => {
-    if (genero == 'todosLosGeneros') {
-        return listaPeliculasSeries;
-    } else {
-        let listaFiltrada = listaPeliculasSeries.filter((i) => {
-            return i.genero == genero;
-        });
-        console.log(listaFiltrada);
-        return listaFiltrada;
-    }
-};
-
-const filtrarPorCategoria = (cat) => {
-    let listaFiltrada = listaPeliculasSeries.filter((i) => {
-        return i.categoria == cat;
-    });
-    return listaFiltrada;
-};
-
 const filtrar = (cat, gen) => {
     let listaFiltrada;
     if (gen == 'todos' && cat == 'todos') {
-        return listaPeliculasSeries
+        return listaPeliculasSeries;
     } else if (gen == 'todos') {
         listaFiltrada = listaPeliculasSeries.filter((i) => {
             return i.categoria == cat;
@@ -83,10 +75,6 @@ const filtrar = (cat, gen) => {
         listaFiltrada = listaPeliculasSeries.filter((i) => {
             return i.genero == gen;
         });
-
-        console.log(listaFiltrada);
-        console.log(gen);
-        console.log(cat);
     } else {
         listaFiltrada = listaPeliculasSeries.filter((i) => {
             return i.categoria == cat && i.genero == gen;
@@ -99,16 +87,14 @@ const filtrar = (cat, gen) => {
 };
 
 linkPeliculasBtn.addEventListener('click', (e) => {
-    cat ="pelicula"
+    cat = 'pelicula';
     let listaFiltrada = filtrar(cat, gen);
     dibujarLista(listaFiltrada);
 });
 
 linkSeriesBtn.addEventListener('click', (e) => {
-    cat ="serie"
-
+    cat = 'serie';
     let listaFiltrada = filtrar(cat, gen);
-
     dibujarLista(listaFiltrada);
 });
 
@@ -118,11 +104,16 @@ linkHomeBtn.addEventListener('click', (e) => {
 
 selectGenero.addEventListener('change', (e) => {
     gen = e.target.value;
-
-    
-
     let listaFiltrada = filtrar(cat, gen);
     dibujarLista(listaFiltrada);
+});
+
+inputBuscador.addEventListener('change', (e) => {
+    let regex = new RegExp(`${e.target.value}`,"i")
+
+    let peliculasEncontrada = listaPeliculasSeries.filter((i) => regex.test(i.titulo));
+
+     dibujarLista(peliculasEncontrada); 
 });
 
 //////////////
