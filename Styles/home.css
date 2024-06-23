@@ -7,6 +7,21 @@
     margin-top: 10px;
 
 }
+.iconoDeUsuario_container{
+    gap: 20px;
+}
+
+.iconoDeUsuario_container p{
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.iconoDeUsuario_container p:hover {
+    color: rgb(255, 72, 255);
+}
+
+
+
 
 .filtrarPorCategoria select {
     width: 300px;
