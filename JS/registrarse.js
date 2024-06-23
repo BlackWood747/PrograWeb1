@@ -50,6 +50,11 @@ validateAlphanumeric(usuario_input);
 let contrasena_input = document.querySelector("#password");
 let contrasena;
 let contrasenaValida = false;
+let contrasena_requerimientos = document.querySelector(".contrasena_requerimientos");
+let requerimiento_8caracteres = document.querySelector(".requerimiento_8caracteres");
+let requerimiento_2letras = document.querySelector(".requerimiento_2letras");
+let requerimiento_2nros = document.querySelector(".requerimiento_2nros");
+let requerimiento_2caracEspeciales = document.querySelector(".requerimiento_2caracEspeciales");
 
 let verificarContrasena_input = document.querySelector("#verifypassword");
 let verificacionContrasena;
@@ -96,6 +101,30 @@ function validarYVerificarContrasena() {
 
             validezDeContrasenaIcon.className = "fa-solid fa-circle-xmark"
             document.querySelector(".contrasena_li").append(validezDeContrasenaIcon);
+        }
+
+        if (contrasena.length >= 8) {
+            requerimiento_8caracteres.style.color= "#30ec39";
+        } else {
+            requerimiento_8caracteres.style.color= "#ec3049"
+        }
+
+        if (letrasCount >= 2) {
+            requerimiento_2letras.style.color= "#30ec39";
+        } else {
+            requerimiento_2letras.style.color= "#ec3049"
+        }
+
+        if (numerosCount >= 2) {
+            requerimiento_2nros.style.color= "#30ec39";
+        } else {
+            requerimiento_2nros.style.color= "#ec3049"
+        }
+
+        if (especialesCount >= 2) {
+            requerimiento_2caracEspeciales.style.color= "#30ec39";
+        } else {
+            requerimiento_2caracEspeciales.style.color= "#ec3049"
         }
 
 
