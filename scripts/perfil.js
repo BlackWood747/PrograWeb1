@@ -256,38 +256,12 @@ function validarNumeroTarjeta() {
 validarNumeroTarjeta();
 
 // QUE TODOS LOS DATOS SEAN CORRECTOS AL ENVIAR LOS DATOS DEL FORMULARIO
-
-let formulario = document.querySelector(".nuevaContrasena_form")
+/*if(
+    contrasenaValida = true && contrasenaVerificada
+)*/
 
 // Funcion que previene que no se envien los datos del formulario si la contraseña no es valida o si la contraseña verificada no es igual a la que se introdujo
-function formularioPrevent(event) {
 
-    let radioInputs = document.querySelectorAll('input[type="radio"]');
-    let isRadioChecked = Array.from(radioInputs).some(radio => radio.checked);
-
-    if (contrasenaValida != true) {
-
-        event.preventDefault();
-        contrasenaValida = false;
-        contrasenaVerificada = false;
-        alert("La contraseña no es valida, cambiala para continuar!");
-
-    } else if(contrasenaVerificada !== true) {
-
-        event.preventDefault();
-        contrasenaVerificada = false;
-        alert("La contraseña verificada es diferente a la contraseña introducida :(");
-
-    } if(isRadioChecked == true) {
-
-        event.preventDefault();
-        alert("Debe seleccionar al menos un metodo de pago antes de enviar el formulario.");
-
-    }
-}
-
-// Ejecucion de la funcion para prevenir que al enviar los datos del formulario con las contraseñas mal, no se envien los datos
-formulario.addEventListener("submit", formularioPrevent);
 
 //--------------------------------------------------------------------------------------------------------------------------
 //funcion El botón confirmar se debe habilitar solo si ambos campos de contraseña están completos
@@ -298,33 +272,84 @@ let inputConfirmarContraseña = document.getElementById('confirmarContraseña');
 let radioInputs = document.querySelectorAll('input[type="radio"]');
 
 
-function contraseñasCompletas() {
-    return inputContraseña.value.trim() !== '' && inputConfirmarContraseña.value.trim() !== '';
-}
-
-
-function metodoPagoSeleccionado() {
-    return Array.from(radioInputs).some(radio => radio.checked);
-}
-
-
-function habilitarBotonGuardar() {
-    let botonGuardar = document.querySelector('.button-confirm');
-    botonGuardar.disabled = !(contraseñasCompletas() || metodoPagoSeleccionado());
-}
 
 
 habilitarBotonGuardar();
+// evitar el envio del formulario si las contraseñas no son validas
+const formulario = document.querySelector('nuevaContrasena_form')
+function habilitarBotonGuardar() {
+    let botonGuardar = document.querySelector('.button-confirm');
+    botonGuardar.disabled = !(contrasenasCompletas() || metodoPagoSeleccionado());
+}
 
+function contrasenasCompletas() {
+    return contrasena_input.value.trim() !== '' && verificarContrasena_input.value.trim() !== '';
+}
 
-inputContraseña.addEventListener('input', habilitarBotonGuardar);
-inputConfirmarContraseña.addEventListener('input', habilitarBotonGuardar);
+function metodoPagoSeleccionado() {
+    let radioInputs = document.querySelectorAll('input[type="radio"]');
+    return Array.from(radioInputs).some(radio => radio.checked);
+}
 
+habilitarBotonGuardar();
+
+contrasena_input.addEventListener('input', habilitarBotonGuardar);
+verificarContrasena_input.addEventListener('input', habilitarBotonGuardar);
+
+radioInputs = document.querySelectorAll('input[type="radio"]');
 radioInputs.forEach(radio => {
     radio.addEventListener('change', habilitarBotonGuardar);
 });
-//---------------------------------------------------
-        // funcion para mostrar el nombre de usuario, obteniendolo del array usuarios. 
+
+// Función para manejar el envío del formulario
+function manejarEnvioFormulario(event) {
+    let contrasenaCambiada = contrasena_input.value.trim() !== '';
+    let confirmacionContrasenaCambiada = verificarContrasena_input.value.trim() !== '';
+    let metodoPagoSeleccionado = Array.from(radioInputs).some(radio => radio.checked);
+
+    if (contrasenaCambiada || confirmacionContrasenaCambiada) {
+        if (!contrasenaValida || !contrasenaVerificada) {
+            event.preventDefault();
+            alert("La contraseña no es válida o las contraseñas no coinciden.");
+            return;
+        }
+        el
+    }
+
+    if (metodoPagoSeleccionado) {
+        let pagoTarjeta_radio = document.querySelector('input[name="pay-mettod"][value="credit-card"]');
+        if (pagoTarjeta_radio.checked) {
+            if (nroTarjeta_input.value.trim() === '') {
+                event.preventDefault();
+                alert('Debe ingresar el número de la tarjeta!');
+                return;
+            }
+            if (codigoTarjeta_input.value.trim() === '') {
+                event.preventDefault();
+                alert('Debe ingresar el código de la tarjeta!');
+                return;
+            }
+            if (!numeroTarjetaValida || !claveTarjetaValida) {
+                event.preventDefault();
+                alert('Los datos de la tarjeta no son válidos.');
+                return;
+            }
+        }
+    }
+}
+
+// Agregar el evento submit al formulario
+
+const btnsubmit = document.querySelector('.button-confirm')
+btnsubmit.addEventListener("submit", manejarEnvioFormulario);
+
+//---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+// funcion para mostrar el nombre de usuario, obteniendolo del array usuarios. 
 function mostrarnombreDeUsuario(){
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     const nombreDeUsuario = usuarios[0].nombreDeUsuario
