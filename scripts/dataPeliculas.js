@@ -16,7 +16,7 @@ const listaPeliculasSeries = [
             la falta de paz y tranquilidad en su hogar, deciden tomar <br />\
             medidas para detener la fiesta y restablecer el orden en el\
             vecindario.',
-        link_pelicula: 'https://youtu.be/S8EJVX735dY?si=D49uaT4E4oD7YmKB',
+        link_pelicula: 'https://www.youtube.com/embed?v=KrAf5ALLxGI',
         img: '/Src Img/neighbors.jpg',
     },
     {
@@ -34,13 +34,14 @@ const listaPeliculasSeries = [
         <br />pero las cosas se complican cuando descubren que no tienen\
         permiso para vender alcohol y deben encontrar una forma de\
         obtenerlo.',
-        link_pelicula: 'https://youtu.be/T5PwUtWE03Y?si=4c6CmPpSXvAu_aqQ',
+        link_pelicula: 'https://youtube.com/embed/T5PwUtWE03Y?si=4c6CmPpSXvAu_aqQ',
         img: '/Src Img/superbad.jpg',
     },
     {
         titulo: 'The hangover',
         categoria: 'pelicula',
         duracion: '100 minutos',
+        link_pelicula:"https://youtube.com/embed/tcdUhdOlz9M?si=5yi6tsYspwJJWvYI",
         genero: 'comedia' /*Actores :[],*/,
         detalle: 'thehangover.html',
         img: '/Src Img/thehangover.jpg',
@@ -64,7 +65,7 @@ const listaPeliculasSeries = [
 
         descripción:
             'Arthur Fleck es un hombre que lucha por encontrar su lugar en la sociedad fracturada de Gotham City. Durante el día trabaja como payaso, pero por la noche aspira a ser un comediante stand-up. Conforme sus esfuerzos son rechazados, más se sumerge en la locura, transformándose paulatinamente en el criminal conocido como Joker.',
-        link_pelicula: 'https://www.youtube.com/watch?v=zAGVQLHvwOY',
+        link_pelicula: 'https://www.youtube.com/embed/rgrWXTz_8eU',
     },
     {
         titulo: 'The Office',
@@ -76,7 +77,7 @@ const listaPeliculasSeries = [
 
         descripción:
             'The Office es una serie de televisión estadounidense de comedia que sigue la vida de los empleados de la sucursal de Scranton de la empresa Dunder Mifflin, una compañía ficticia de papel. La serie retrata las interacciones y dramas dentro de la oficina a través de un estilo de mockumentary, donde los personajes miran y hablan directamente a la cámara.',
-        link_pelicula: 'https://www.youtube.com/watch?v=II1Q806wMR8',
+        link_pelicula: 'https://www.youtube.com/embed/II1Q806wMR8',
     },
     {
         titulo: 'Relatos Salvajes',
@@ -88,7 +89,7 @@ const listaPeliculasSeries = [
 
         descripción:
             'Relatos Salvajes es una película de antología argentina compuesta por seis historias independientes que retratan la violencia de la sociedad moderna. Cada relato explora cómo los individuos reaccionan cuando sus vidas cotidianas se ven perturbadas y cómo la civilidad se desmorona ante la adversidad, la injusticia y la frustración.',
-        link_pelicula: 'https://www.youtube.com/watch?v=sJ4nrtgdQ4E',
+        link_pelicula: 'https://www.youtube.com/embed/sJ4nrtgdQ4E',
     },
     {
         titulo: 'Interestelar',
@@ -100,7 +101,7 @@ const listaPeliculasSeries = [
 
         descripción:
             'Interestelar narra la historia de un grupo de astronautas y científicos que viajan a través de un agujero de gusano recién descubierto en busca de nuevos hogares para la humanidad. La película sigue al ex piloto de la NASA, Cooper, y a su hija Murph mientras se embarcan en una misión que los llevará más allá de nuestra galaxia en un intento desesperado por salvar a la humanidad.',
-        link_pelicula: 'https://www.youtube.com/watch?v=zSWdZVtXT7E',
+        link_pelicula: 'https://www.youtube.com/embed/zSWdZVtXT7E',
     },
     {
         titulo: 'Regular Show',
@@ -112,7 +113,7 @@ const listaPeliculasSeries = [
 
         descripción:
             'Regular Show sigue las aventuras de Mordecai, un arrendajo azul, y Rigby, un mapache, dos trabajadores de mantenimiento de un parque que constantemente se meten en problemas. A pesar de que sus trabajos consisten en tareas aburridas, Mordecai y Rigby siempre encuentran la manera de escapar de sus obligaciones y terminar en situaciones absurdas y surrealistas.',
-        link_pelicula: 'https://www.youtube.com/watch?v=y894QNtX0VA',
+        link_pelicula: 'https://www.youtube.com/embed/y894QNtX0VA',
     },
     {
         titulo: 'Taxi Driver',
@@ -124,7 +125,7 @@ const listaPeliculasSeries = [
 
         descripción:
             'Taxi Driver sigue la vida de Travis Bickle, un excombatiente de Vietnam que sufre de insomnio y trabaja como conductor de taxi en la ciudad de Nueva York. Aislado de la sociedad y profundamente perturbado por la decadencia que lo rodea, Travis se obsesiona con salvar a una joven prostituta y se embarca en una violenta cruzada para limpiar las calles de la ciudad.',
-        link_pelicula: 'https://www.youtube.com/watch?v=UUxD4-dEzn0',
+        link_pelicula: 'https://www.youtube.com/embed/UUxD4-dEzn0',
     },
 
     {
@@ -136,7 +137,7 @@ const listaPeliculasSeries = [
         genero: 'acción',
         descripción:
             'La saga de Rápido y Furioso sigue las aventuras de un grupo de corredores de autos, ladrones y agentes federales que se ven envueltos en una serie de atracos, carreras callejeras y conflictos alrededor del mundo. A medida que la franquicia avanza, la trama se vuelve cada vez más extravagante, con los protagonistas enfrentando desafíos cada vez más peligrosos.',
-        link_pelicula: 'https://www.youtube.com/watch?v=uisBaTkQAEs',
+        link_pelicula: 'https://www.youtube.com/embed/uisBaTkQAEs',
     },
     {
         titulo: 'The Walking Dead',
@@ -147,7 +148,7 @@ const listaPeliculasSeries = [
         genero: 'terror',
         descripción:
             'The Walking Dead sigue a un grupo de sobrevivientes liderados por el oficial de policía Rick Grimes, mientras navegan por un mundo post-apocalíptico infestado de zombis. A medida que avanzan, el grupo se enfrenta a los desafíos de sobrevivir en un mundo devastado, las luchas internas dentro del grupo y las amenazas de otros sobrevivientes hostiles.',
-        link_pelicula: 'https://www.youtube.com/watch?v=R1v0uFms68U',
+        link_pelicula: 'https://www.youtube.com/embed/R1v0uFms68U',
     },
     {
         titulo: 'Tom y Jerry',
@@ -158,7 +159,7 @@ const listaPeliculasSeries = [
 
         descripción:
             'Tom y Jerry es una serie de cortos de animación que sigue las hilarantes persecuciones entre Tom, un gato doméstico, y Jerry, un ratón travieso. A pesar de los numerosos intentos de Tom por atrapar a Jerry, este logra escapar usando su ingenio y astucia, dando lugar a divertidas escenas llenas de slapstick y acción cómica.',
-        link_pelicula: 'https://www.youtube.com/watch?v=IB_TWLgC1kY',
+        link_pelicula: 'https://www.youtube.com/embed/IB_TWLgC1kY',
     },
     {
         titulo: 'Vikings',
@@ -168,7 +169,7 @@ const listaPeliculasSeries = [
         descripción:
             'Vikings narra la historia del legendario caudillo vikingo Ragnar Lothbrok y su familia. La serie sigue las aventuras de Ragnar mientras asciende desde ser un simple granjero hasta convertirse en un poderoso rey, liderando incursiones y expediciones de conquista a través del Mar Báltico. La serie explora la cultura, las creencias y los conflictos de la sociedad vikinga durante la Edad Media.',
         img: '/Src Img/vikings-poster.jpg',
-        link_pelicula: 'https://www.youtube.com/watch?v=bjqEWgDVPe4',
+        link_pelicula: 'https://www.youtube.com/embed/bjqEWgDVPe4',
     },
     {
         titulo: 'Click',
@@ -177,7 +178,7 @@ const listaPeliculasSeries = [
         genero: 'comedia',
         descripción:
             'Click narra la historia de Michael Newman, un arquitecto que constantemente se encuentra abrumado por su trabajo y su familia. Un día, en una tienda, encuentra un control remoto universal mágico que le permite manipular el tiempo a su antojo. Inicialmente, Michael utiliza el control para ahorrar tiempo y mejorar su vida, pero pronto se da cuenta de que sus acciones tienen consecuencias inesperadas.',
-        link_pelicula: 'https://www.youtube.com/watch?v=uxDx4jzMKBI',
+        link_pelicula: 'https://www.youtube.com/embed?v=uxDx4jzMKBI',
         img: '/Src Img/click-adam snadler.jpg',
     },
     {
@@ -188,7 +189,7 @@ const listaPeliculasSeries = [
         genero: 'accion',
         descripción:
             'American Made narra la historia de Barry Seal, un piloto comercial que es reclutado por la CIA para llevar a cabo operaciones encubiertas en Centroamérica durante la década de 1980. A medida que Seal se involucra cada vez más en el tráfico de armas y drogas, su vida se vuelve cada vez más peligrosa y complicada, atrapado entre los carteles de la droga, el gobierno y sus propias ambiciones.',
-        link_pelicula: 'https://www.youtube.com/watch?v=AXCzl3dvCiM',
+        link_pelicula: 'https://www.youtube.com/embed?v=AXCzl3dvCiM',
     },
     {
         titulo: 'Superbad',
@@ -199,7 +200,7 @@ const listaPeliculasSeries = [
 
         descripción:
             'La trama sigue a dos amigos, Evan y Seth, que están a punto de separarse después de graduarse de la escuela secundaria y asistir a universidades diferentes. Para celebrar su último fin de semana juntos, planean organizar una fiesta en la casa de Seth, pero las cosas se complican cuando descubren que no tienen permiso para vender alcohol y deben encontrar una forma de obtenerlo.',
-        link_pelicula: 'https://youtu.be/T5PwUtWE03Y?si=4c6CmPpSXvAu_aqQ',
+        link_pelicula: 'https://youtube.com/embed/T5PwUtWE03Y?si=4c6CmPpSXvAu_aqQ',
     },
 ];
 
