@@ -36,7 +36,7 @@ nav{
  
     }
     .email{
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         li {
             display: inline;
         
@@ -46,7 +46,7 @@ nav{
         margin-left: 25px;
     }
     .contraseña {
-       
+       margin-bottom: 5px;
     
       
        li {display: block
