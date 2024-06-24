@@ -354,8 +354,21 @@ function usuarioExiste(email) {
 // Funcion que previene que no se envien los datos del formulario si la contraseña no es valida o si la contraseña verificada no es igual a la que se introdujo
 function formularioPrevent(event) {
 
+    let nombre = document.querySelector('#name').value;
+    let apellido = document.querySelector('#surname').value;
+    let email = document.querySelector('#email').value;
+    let nombreDeUsuario = document.querySelector('#usuario').value;
+    let contrasena = document.querySelector('#password').value;
+
     let radioInputs = document.querySelectorAll('input[type="radio"]');
     let isRadioChecked = Array.from(radioInputs).some(radio => radio.checked);
+
+    let pagoTarjeta_radio = document.querySelector('#credit-card');
+    let nroTarjeta_input = document.querySelector('.numerotarjeta');
+    let claveTarjeta_input = document.querySelector('.codigotarjeta');
+    let pagoCupon_radio = document.querySelector('#cupon');
+    let pagoFacil_checkbox = document.querySelector('#pagoFacil');
+    let rapipago_checkbox = document.querySelector('#rapipago');
 
     if (contrasenaValida != true) {
 
@@ -363,35 +376,84 @@ function formularioPrevent(event) {
         contrasenaValida = false;
         contrasenaVerificada = false;
         alert("La contraseña no es valida, cambiala para continuar!");
+        return;
 
-    } else if(contrasenaVerificada != true) {
+    }  
+    
+    if(contrasenaVerificada != true) {
 
         event.preventDefault();
         contrasenaVerificada = false;
         alert("La contraseña verificada es diferente a la contraseña introducida :(");
+        return;
 
-    } else if(isRadioChecked != true) {
+    }
+    
+    if(isRadioChecked != true) {
 
         event.preventDefault();
         alert("Debe seleccionar al menos un metodo de pago antes de enviar el formulario.");
+        return;
 
     }
 
-    let nombre = document.querySelector('#name').value;
-    let apellido = document.querySelector('#surname').value;
-    let email = document.querySelector('#email').value;
-    let nombreDeUsuario = document.querySelector('#usuario').value;
-    let contrasena = document.querySelector('#password').value;
+    if (pagoTarjeta_radio.checked) {
+        if (nroTarjeta_input.value.trim() === '') {
+
+            event.preventDefault();
+            alert('Debe ingresar el numero de la tarjeta!');
+            return;
+        }
+
+        if (numeroTarjetaValida == false) {
+
+            event.preventDefault();
+            alert('El numero de la tarjeta es invalido!');
+            return;
+        }
+
+        if (claveTarjeta_input.value.trim() === '') {
+
+            event.preventDefault();
+            alert('Debe ingresar la clave de la tarjeta!');
+            return;
+        }
+
+        if (claveTarjeta_input.value === "000") {
+
+            event.preventDefault();
+            alert('La clave de la tarjeta no puede ser 000!');
+            return;
+        }
+
+        if (claveTarjetaValida == false) {
+
+            event.preventDefault();
+            alert('La clave de la tarjeta es invalida!');
+            return;
+        }
+    }
+
+    if (pagoCupon_radio.checked) {
+        if (!pagoFacil_checkbox.checked && !rapipago_checkbox.checked) {
+
+            event.preventDefault();
+            alert('Debe seleccionar al menos una opción de cupón (Pago Fácil o RapiPago)');
+            return;
+        }
+    }
 
     if (usuarioExiste(email)) {
-
+        
         event.preventDefault();
         alert('El mail ya se encuentra asociado a un usuario!');
+        return;
 
     } else {
+                
         registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena);
     }
-    
+
 }
 
 // Ejecucion de la funcion para prevenir que al enviar los datos del formulario con las contraseñas mal, no se envien los datos
