@@ -317,18 +317,38 @@ validarNumeroTarjeta();
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// QUE TODOS LOS DATOS SEAN CORRECTOS AL ENVIAR LOS DATOS DEL FORMULARIO
+// QUE TODOS LOS DATOS SEAN CORRECTOS AL ENVIAR LOS DATOS DEL FORMULARIO Y ALMACENAR ARRAY DE USUARIOS
 
 let formulario = document.querySelector(".formulario")
 
-function guardarNombreDeUsuarioEnLocalStorage() {
-    
-    localStorage.setItem("nombreDeUsuario", usuario_input.value);
+function crearUsuario(nombre, apellido, email, nombreDeUsuario, contrasena) {
+    return {
+        nombre: nombre,
+        apellido: apellido,
+        email: email,
+        nombreDeUsuario: nombreDeUsuario,
+        contrasena: contrasena
+    };
 }
 
-function guardarContrasenaEnLocalStorage() {
+function guardarUsuario(usuario) {
+
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    usuarios.push(usuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+}
+
+function registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena) {
+
+    let nuevoUsuario = crearUsuario(nombre, apellido, email, nombreDeUsuario, contrasena);
+    guardarUsuario(nuevoUsuario);
+    console.log('Usuario registrado con éxito');
+}
+
+function usuarioExiste(email) {
     
-    localStorage.setItem("contrasena", contrasena_input.value);
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    return usuarios.some(usuario => usuario.email === email);
 }
 
 // Funcion que previene que no se envien los datos del formulario si la contraseña no es valida o si la contraseña verificada no es igual a la que se introdujo
@@ -357,13 +377,19 @@ function formularioPrevent(event) {
 
     }
 
-    if (usuario_input.value === localStorage.getItem("nombreDeUsuario")) {
-        
+    let nombre = document.querySelector('#name').value;
+    let apellido = document.querySelector('#surname').value;
+    let email = document.querySelector('#email').value;
+    let nombreDeUsuario = document.querySelector('#usuario').value;
+    let contrasena = document.querySelector('#password').value;
+
+    if (usuarioExiste(email)) {
+
         event.preventDefault();
-        alert("Ese nombre de usuario ya existe!");
+        alert('El mail ya se encuentra asociado a un usuario!');
+
     } else {
-        guardarNombreDeUsuarioEnLocalStorage();
-        guardarContrasenaEnLocalStorage();
+        registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena);
     }
     
 }
