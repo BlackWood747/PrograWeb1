@@ -1,31 +1,51 @@
 
 let recuperarContrasena_form = document.querySelector(".recuperarContrasena_form");
-let usuario_input = document.querySelector("#NombreDeUsuario");
+let mail_input = document.querySelector("#email");
+let usuario_input = document.querySelector("#nombreDeUsuario");
 
-// Funcion para chequear que el nombre de usuario ingresado sea igual al del localStorage
-function usuarioValido() {
+function mailExistePeroUsuarioNoCoincide(email, nombreDeUsuario) {
     
-    let auxBoolean = false;
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    return usuarios.some(usuario => usuario.email === email && usuario.nombreDeUsuario != nombreDeUsuario);
+}
 
-    let usuarioIngresado = usuario_input.value;
-    let usarioLocalStorage = localStorage.getItem("nombreDeUsuario");
+function mailNoExiste(email) {
+    
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    return usuarios.some(usuario => usuario.email != email);
+}
 
-    if (usuarioIngresado === usarioLocalStorage) {
-        auxBoolean = true;
-    } else {
-        auxBoolean = false;
-    }
-
-    return auxBoolean;
+function usuariosNoExiste() {
+    
+    return localStorage.getItem('usuarios') === null;
 }
 
 // Funcion que previene que el mail no se manden si el nombre de usuario no existe en el localStorage
 function recuperarContrasenaPrevent(event) {
 
-    if (usuarioValido() == false) {
+    let mailIngresado = mail_input.value;
+    let nombreDeUsuarioIngresado = usuario_input.value;
+
+    if (usuariosNoExiste()) {
+
+        event.preventDefault();
+        alert("Mail de usuario no registrado!");
+        return;
+
+    }
+
+    if (mailNoExiste(mailIngresado)) {
         
         event.preventDefault();
-        alert("Nombre de usuario no encontrado en la plataforma!");
+        alert("Mail de usuario no registrado!");
+        return;
+    }
+
+    if (mailExistePeroUsuarioNoCoincide(mailIngresado, nombreDeUsuarioIngresado)) {
+        
+        event.preventDefault();
+        alert("Nombre de usuario incorrecto!");
+        return;
     }
 }
 

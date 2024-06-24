@@ -4,55 +4,56 @@
 
 // Variables
 let iniciarSesion_form = document.querySelector('.iniciarSesion_form');
-let nombreDeUsuario_input = document.querySelector('#usuario');
+let mailDeUsuario_input = document.querySelector('#email');
 let contrasena_input = document.querySelector("#contraseña");
 
 // Funcion para chequear que el nombre de usuario ingresado sea igual al del localStorage
-function usuarioValido() {
+
+function mailExistePeroContrasenaNoCoincide(email, contrasena) {
     
-    let auxBoolean = false;
-
-    let nombreDeUsuarioIngresado = nombreDeUsuario_input.value;
-    let nombreDeUsarioLocalStorage = localStorage.getItem("nombreDeUsuario");
-
-    if (nombreDeUsuarioIngresado === nombreDeUsarioLocalStorage) {
-        auxBoolean = true;
-    } else {
-        auxBoolean = false;
-    }
-
-    return auxBoolean;
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    return usuarios.some(usuario => usuario.email === email && usuario.contrasena != contrasena);
 }
 
-// Funcion para chequear que la contraseña ingresada sea igual a la del localStorage
-function contrasenaValida() {
+
+function mailNoExiste(email) {
     
-    let auxBoolean = false;
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    return usuarios.some(usuario => usuario.email != email);
+}
 
-    let contrasenaIngresada = contrasena_input.value;
-    let contrasenaLocalStorage = localStorage.getItem("contrasena");
-
-    if (contrasenaIngresada === contrasenaLocalStorage) {
-        auxBoolean = true;
-    } else {
-        auxBoolean = false;
-    }
-
-    return auxBoolean;
+function usuariosNoExiste() {
+    
+    return localStorage.getItem('usuarios') === null;
 }
 
 // Funcion que previene que los datos no se manden si el nombre de usuario y contraseña no son correctos
 function inicioDeSesionPrevent(event) {
 
-    if (usuarioValido() == false) {
-        
-        event.preventDefault();
-        alert("Nombre de usuario no encontrado, registrese o cambielo!");
+    let mailDeUsuarioIngresado = mailDeUsuario_input.value;
+    let contrasenaIngresada = contrasena_input.value;
 
-    } else if (contrasenaValida() == false) {
+    if (usuariosNoExiste()) {
+
+        event.preventDefault();
+        alert("Mail de usuario no registrado!");
+        return;
+
+    }
+
+    if (mailNoExiste(mailDeUsuarioIngresado)) {
         
         event.preventDefault();
-        alert("Contraseña incorrecta :(");
+        alert("Mail de usuario no registrado!");
+        return;
+
+    }
+
+    if (mailExistePeroContrasenaNoCoincide(mailDeUsuarioIngresado, contrasenaIngresada)) {
+        
+        event.preventDefault();
+        alert("Contraseña incorrecta!");
+        return;
     }
 }
 
