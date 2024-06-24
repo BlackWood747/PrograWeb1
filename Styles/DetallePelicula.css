@@ -2,7 +2,7 @@ html{
     width: 100%;
 }
 nav {
-    justify-content: space-between;
+   /*  justify-content: space-between; */
 }
 .Descripcion-pelicula iframe {
     border-radius: 5px;

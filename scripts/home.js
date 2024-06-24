@@ -1,7 +1,6 @@
 import { listaPeliculasSeries } from './dataPeliculas.js';
 ('use strict');
 
-
 const cerrarSesionBtn = document.querySelector('.cerrarSesion');
 const linkPeliculasBtn = document.querySelector('.linkPeliculas');
 const linkSeriesBtn = document.querySelector('.linkSeries');
@@ -38,7 +37,6 @@ const dibujarLista = (lista) => {
         h.textContent = 'No encontrado';
         layout.appendChild(h);
     } else {
-
         layout.innerHTML = '';
         lista.forEach((i) => {
             const cajaElement = document.createElement('div');
@@ -46,7 +44,8 @@ const dibujarLista = (lista) => {
             cajaElement.classList.add('caja');
 
             const linkElement = document.createElement('a');
-            /* linkElement.href = `./detallesDePeliculas/${i.detalle}`; */
+            /* linkElement.href = `./detallesDePeliculas/${i.detalle}`;
+            linkElement.classList.add('link'); */
 
             const imgElement = document.createElement('img');
             imgElement.src = i.img;
@@ -58,8 +57,7 @@ const dibujarLista = (lista) => {
 
             layout.appendChild(cajaElement);
         });
-        setearListeners()
-
+        setearListeners();
     }
 };
 dibujarLista(listaPeliculasSeries);
@@ -120,14 +118,9 @@ inputBuscador.addEventListener('change', (e) => {
     dibujarLista(peliculasEncontrada);
 });
 
-
-
 // Detalle de peliculas
 
-
-
 const dibujarDetalle = (pelicula) => {
-    
     console.log(pelicula);
     layout.innerHTML = `<section class="Descripcion-pelicula">
         <article class="caja-1">
@@ -186,14 +179,15 @@ const dibujarDetalle = (pelicula) => {
 };
 
 function setearListeners() {
-const cajas = document.querySelectorAll('.caja');
+    const cajas = document.querySelectorAll('.caja');
 
     cajas.forEach((e) => {
         e.addEventListener('click', (e) => {
             let titulo = e.target.alt;
             let pelicula = listaPeliculasSeries.find((e) => e.titulo == titulo);
+            window.scroll(0,0)
             dibujarDetalle(pelicula);
         });
     });
 }
-setearListeners()
+setearListeners();
