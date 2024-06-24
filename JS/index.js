@@ -9,13 +9,6 @@ let contrasena_input = document.querySelector("#contraseña");
 
 // Funcion para chequear que el nombre de usuario ingresado sea igual al del localStorage
 
-function mailYContrasenaCoinciden(email, contrasena) {
-    
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    return usuarios.some(usuario => usuario.email === email && usuario.contrasena === contrasena);
-}
-
-
 function mailExistePeroContrasenaNoCoincide(email, contrasena) {
     
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
