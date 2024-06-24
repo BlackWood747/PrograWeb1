@@ -15,11 +15,24 @@ function mailNoExiste(email) {
     return usuarios.some(usuario => usuario.email != email);
 }
 
+function usuariosNoExiste() {
+    
+    return localStorage.getItem('usuarios') === null;
+}
+
 // Funcion que previene que el mail no se manden si el nombre de usuario no existe en el localStorage
 function recuperarContrasenaPrevent(event) {
 
     let mailIngresado = mail_input.value;
     let nombreDeUsuarioIngresado = usuario_input.value;
+
+    if (usuariosNoExiste()) {
+
+        event.preventDefault();
+        alert("Mail de usuario no registrado!");
+        return;
+
+    }
 
     if (mailNoExiste(mailIngresado)) {
         

@@ -22,11 +22,24 @@ function mailNoExiste(email) {
     return usuarios.some(usuario => usuario.email != email);
 }
 
+function usuariosNoExiste() {
+    
+    return localStorage.getItem('usuarios') === null;
+}
+
 // Funcion que previene que los datos no se manden si el nombre de usuario y contraseña no son correctos
 function inicioDeSesionPrevent(event) {
 
     let mailDeUsuarioIngresado = mailDeUsuario_input.value;
     let contrasenaIngresada = contrasena_input.value;
+
+    if (usuariosNoExiste()) {
+
+        event.preventDefault();
+        alert("Mail de usuario no registrado!");
+        return;
+
+    }
 
     if (mailNoExiste(mailDeUsuarioIngresado)) {
         
