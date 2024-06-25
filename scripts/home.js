@@ -21,7 +21,6 @@ const preguntarSiHayUsuario = () => {
 cerrarSesionBtn.addEventListener('click', function () {
     localStorage.clear();
     preguntarSiHayUsuario();
-    console.log(localStorage.getItem('nombreDeUsuario'));
 });
 
 // Home => todas las peliculas y series!
@@ -32,7 +31,6 @@ const dibujarLista = (lista) => {
     if (!lista || lista.length === 0) {
         layout.innerHTML = '';
 
-        console.log('No encontrado');
         const h = document.createElement('h2');
         h.textContent = 'No encontrado';
         layout.appendChild(h);
@@ -72,7 +70,6 @@ const filtrar = (cat, gen) => {
         listaFiltrada = listaPeliculasSeries.filter((i) => {
             return i.categoria == cat;
         });
-        console.log(listaFiltrada);
     } else if (cat == 'todos') {
         listaFiltrada = listaPeliculasSeries.filter((i) => {
             return i.genero == gen;
@@ -81,9 +78,7 @@ const filtrar = (cat, gen) => {
         listaFiltrada = listaPeliculasSeries.filter((i) => {
             return i.categoria == cat && i.genero == gen;
         });
-        console.log(listaFiltrada);
     }
-    console.log(listaFiltrada);
 
     return listaFiltrada;
 };
@@ -121,7 +116,6 @@ inputBuscador.addEventListener('change', (e) => {
 // Detalle de peliculas
 
 const dibujarDetalle = (pelicula) => {
-    console.log(pelicula);
     layout.innerHTML = `<section class="Descripcion-pelicula">
         <article class="caja-1">
           <iframe
@@ -144,26 +138,9 @@ const dibujarDetalle = (pelicula) => {
           <br />
           <p>Genero:</p>
 
-          <p>${pelicula.genero}a</p>
-          <br />
-          <p>Actores:</p>
-          <a href="https://es.wikipedia.org/wiki/Jonah_Hill" target="_blank"
-            >Jonah Hill</a
-          >
-          <a href="https://es.wikipedia.org/wiki/Michael_Cera" target="_blank"
-            >Michael Cera</a
-          >
-          <a
-            href="https://es.wikipedia.org/wiki/Christopher_Mintz-Plasse"
-            target="_blank"
-            >Christopher Mintz-Plasse</a
-          >
-          <a href="https://es.wikipedia.org/wiki/Bill_Hader" target="_blank"
-            >Bill Hader</a
-          >
-          <a href="https://es.wikipedia.org/wiki/Seth_Rogen" target="_blank"
-            >Seth Rogen</a
-          >
+          <p>${pelicula.genero}</p>
+        
+         
           <br />
           <p>
           ${pelicula.descripcion}

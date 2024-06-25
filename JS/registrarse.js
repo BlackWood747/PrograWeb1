@@ -217,7 +217,7 @@ function validarClaveTarjeta() {
 
         if (claveTarjeta.length == 3 && claveTarjeta != "000") {
 
-            console.log("Clave de trjeta valida");
+            console.log("Clave de tarjeta valida");
             claveTarjetaValida = true;
 
         } else if(claveTarjeta == "000"){

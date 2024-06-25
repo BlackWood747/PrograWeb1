@@ -18,6 +18,12 @@ function verificar_Contraseña(evento){
 }
 button_submitt.addEventListener("click",verificar_Contraseña);*/
 
+
+
+
+
+
+
 // QUE LA CONTRASEÑA TENGA 8 CARACTERES ( MINIMO 2 LETRAS, 2 NUMEROS y 2 CARACTERES ESPECIALES)
 
 // Variables
