@@ -96,26 +96,28 @@ let requerimiento_2caracEspeciales = document.querySelector(".requerimiento_2car
         }
 
 
-        function verificarContraseña(){
-            
-        }
- // VALIDACION DE CONFIRMAR CONTRASEÑA 
-        verificacionContrasena = verificarContrasena_input.value;
-
-        if (verificacionContrasena === contrasena) {
+});
+       verificarContrasena_input.addEventListener('input' ,function (){
+               if (verificarContrasena_input.value === contrasena) {
            
             contrasenaVerificada = true;
             verificacionDeContrasenaIcon.className = "fa-solid fa-circle-check"
-            document.querySelector("#confirmcontraseña").append(verificacionDeContrasenaIcon);
+            document.querySelector("#confirmcontraseña").append(verificacionDeContrasenaIcon); verificacionContrasena = verificarContrasena_input.value;
+
         } else {
-            
+           
             verificacionDeContrasenaIcon.className = "fa-solid fa-circle-xmark"
             document.querySelector("#confirmcontraseña").append(verificacionDeContrasenaIcon);
             contrasenaVerificada = false;
+            
         }
 
      
-    });
+    })   
+   
+ // VALIDACION DE CONFIRMAR CONTRASEÑA 
+       
+     
 
 
    
@@ -164,9 +166,10 @@ function validarClaveTarjeta() {
             localStorage.setItem("codigoTarjeta",claveTarjeta_input.value)
 
         } else if(claveTarjeta == "000"){
+            alert("La clave de la tarjeta no puede ser 000");
             claveTarjetaValida = false;
             console.log("La clave de la tarjeta no puede ser 000")
-
+            
         } else {
 
             console.log("La clave de la tarjeta no cumple con los requisitos mínimos.");
@@ -233,6 +236,7 @@ function validarNumeroTarjeta() {
                 console.log("Numero de trjeta valida");
                 numeroTarjetaValida = true;
                 localStorage.setItem("numeroTarjeta", numeroTarjeta_input.value)
+
             } else if (esNumeroImparOPar(ultimoDigito) == "impar" && sumaDeNumerosDeLaTarjetaMenosElUltimoEsImparOPar(numeroTarjeta) == "par") {
 
                 console.log("Numero de trjeta valida");
@@ -276,14 +280,14 @@ let radioInputs = document.querySelectorAll('input[type="radio"]');
 
 habilitarBotonGuardar();
 // evitar el envio del formulario si las contraseñas no son validas
-const formulario = document.querySelector('nuevaContrasena_form')
+
 function habilitarBotonGuardar() {
     let botonGuardar = document.querySelector('.button-confirm');
     botonGuardar.disabled = !(contrasenasCompletas() || metodoPagoSeleccionado());
 }
 
 function contrasenasCompletas() {
-    return contrasena_input.value.trim() !== '' && verificarContrasena_input.value.trim() !== '';
+    return contrasena_input.value.trim() !== '' && contrasenaVerificada == true;
 }
 
 function metodoPagoSeleccionado() {
@@ -300,7 +304,7 @@ radioInputs = document.querySelectorAll('input[type="radio"]');
 radioInputs.forEach(radio => {
     radio.addEventListener('change', habilitarBotonGuardar);
 });
-
+let formulario = document.querySelector('.nuevaContrasena_form')
 // Función para manejar el envío del formulario
 function manejarEnvioFormulario(event) {
     let contrasenaCambiada = contrasena_input.value.trim() !== '';
@@ -308,29 +312,29 @@ function manejarEnvioFormulario(event) {
     let metodoPagoSeleccionado = Array.from(radioInputs).some(radio => radio.checked);
 
     if (contrasenaCambiada || confirmacionContrasenaCambiada) {
-        if (!contrasenaValida || !contrasenaVerificada) {
+        if (contrasenaValida  != true || contrasenaVerificada != true) {
             event.preventDefault();
             alert("La contraseña no es válida o las contraseñas no coinciden.");
             return;
         }
-        el
+    
     }
 
     if (metodoPagoSeleccionado) {
         let pagoTarjeta_radio = document.querySelector('input[name="pay-mettod"][value="credit-card"]');
         if (pagoTarjeta_radio.checked) {
-            if (nroTarjeta_input.value.trim() === '') {
-                event.preventDefault();
+            if (nroTarjeta_input.value === '') {
+                btnsubmit.preventDefault();
                 alert('Debe ingresar el número de la tarjeta!');
                 return;
             }
             if (codigoTarjeta_input.value.trim() === '') {
-                event.preventDefault();
+                btnsubmit.preventDefault();
                 alert('Debe ingresar el código de la tarjeta!');
                 return;
             }
             if (!numeroTarjetaValida || !claveTarjetaValida) {
-                event.preventDefault();
+                btnsubmit.preventDefault();
                 alert('Los datos de la tarjeta no son válidos.');
                 return;
             }
@@ -340,8 +344,8 @@ function manejarEnvioFormulario(event) {
 
 // Agregar el evento submit al formulario
 
-const btnsubmit = document.querySelector('.button-confirm')
-btnsubmit.addEventListener("submit", manejarEnvioFormulario);
+
+formulario.addEventListener('submit', manejarEnvioFormulario);
 
 //---------------------------------------------------------------------------------------------------------------------
 
@@ -390,8 +394,12 @@ function mostrarContraseña(){
     
     }
     mostrarContraseña()
-    function colorr(){
-        const p = document.querySelector('.requerimiento_8caracteres')
-        p.style.color = '#30ec3';
+    const btnsubmit = document.querySelector('.nuevaContrasena_form')
+    function evitarEnvioFormulario(event){
+        let contrasena = contrasena_input.value;
+        if (contraseña != null){
+        alert("erorrr")
+        }
+
     }
-    colorr();
+btnsubmit.addEventListener("submit", evitarEnvioFormulario)
