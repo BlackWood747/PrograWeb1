@@ -45,6 +45,8 @@ nav {
      box-sizing: border-box;
     width: 100%;
    }
+
+   overflow: hidden;
 }
 .caja-2 {
     a {
@@ -127,6 +129,13 @@ nav {
      align-items: center;
      text-align: center;
     } 
+
+    .container-peliculas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
     .peliculas-similares{
      flex-direction: column;
      align-items: center;
@@ -151,4 +160,6 @@ nav {
         width: 90%;
     }
  }
+
+
  
