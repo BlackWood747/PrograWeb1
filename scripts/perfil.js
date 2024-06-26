@@ -166,19 +166,27 @@ function validarClaveTarjeta() {
         claveTarjeta_input.value = claveTarjeta;
 
         if (claveTarjeta.length == 3 && claveTarjeta != "000") {
-
-            console.log("Clave de trjeta valida");
+            const textoClaveValida = document.getElementById('clavevalida')
+            textoClaveValida.innerText = 'clave valida';
+            textoClaveValida.style.color = "green";
+            textoClaveValida.innerText = 'clave valida';
+            
             claveTarjetaValida = true;
             localStorage.setItem("codigoTarjeta",claveTarjeta_input.value)
 
         } else if(claveTarjeta == "000"){
+            const textoClaveValida = document.getElementById('clavevalida')
+            textoClaveValida.innerText = 'clave invalida';
             alert("La clave de la tarjeta no puede ser 000");
             claveTarjetaValida = false;
-            console.log("La clave de la tarjeta no puede ser 000")
+          
             
         } else {
-
-            console.log("La clave de la tarjeta no cumple con los requisitos mínimos.");
+           
+           
+            const textoClaveValida = document.getElementById('clavevalida')
+            textoClaveValida.style.color = "red";
+            textoClaveValida.innerText = 'clave invalida';
             claveTarjetaValida = false;
         }
     });
@@ -223,8 +231,8 @@ function validarNumeroTarjeta() {
 
     validateNumbers(numeroTarjeta_input);
 
-    numeroTarjeta_input.addEventListener("input", function() {
-
+    numeroTarjeta_input.addEventListener('input', function() {
+        let textTarjetaValida
         let numeroTarjeta = numeroTarjeta_input.value;
 
         if (numeroTarjeta.length > 19) {
@@ -238,26 +246,27 @@ function validarNumeroTarjeta() {
         if (numeroTarjeta.length >= 16 && numeroTarjeta.length <= 19) {
             
             if (esNumeroImparOPar(ultimoDigito) === "par" && sumaDeNumerosDeLaTarjetaMenosElUltimoEsImparOPar(numeroTarjeta) === "impar") {
-
-                console.log("Numero de trjeta valida");
+                const textoValidacionTarjeta = document.getElementById('tarjetavalida')
+                textoValidacionTarjeta.style.color = "green";
+                textoValidacionTarjeta.innerText="tarjeta valida";
                 numeroTarjetaValida = true;
                 localStorage.setItem("numeroTarjeta", numeroTarjeta_input.value)
 
             } else if (esNumeroImparOPar(ultimoDigito) == "impar" && sumaDeNumerosDeLaTarjetaMenosElUltimoEsImparOPar(numeroTarjeta) == "par") {
-
-                console.log("Numero de trjeta valida");
+                const textoValidacionTarjeta = document.getElementById('tarjetavalida')
+                textoValidacionTarjeta.style.color = "green";
+                textoValidacionTarjeta.innerText="tarjeta valida";
+                
                 numeroTarjetaValida = true;
                 localStorage.setItem("numeroTarjeta", numeroTarjeta_input.value)
                 
-            } else {
-
-                console.log("El número de la tarjeta no cumple con los requisitos mínimos.");
-                numeroTarjetaValida = false;
-            }
+            } 
 
         } else {
-
-            console.log("El numero de la tarjeta no cumple con los requisitos mínimos.");
+            const textoValidacionTarjeta = document.getElementById('tarjetavalida')
+            textoValidacionTarjeta.style.color = "red";
+            textoValidacionTarjeta.innerText="tarjeta invalida";
+           
             numeroTarjetaValida = false;
         }
     });
@@ -306,13 +315,13 @@ habilitarBotonGuardar();
 contrasena_input.addEventListener('input', habilitarBotonGuardar);
 verificarContrasena_input.addEventListener('input', habilitarBotonGuardar);
 
-radioInputs = document.querySelectorAll('input[type="radio"]');
+radioInputs = document.getElementsByName('pay-mettod');
 radioInputs.forEach(radio => {
     radio.addEventListener('change', habilitarBotonGuardar);
 });
 let formulario = document.querySelector('.nuevaContrasena_form')
 // Función para manejar el envío del formulario
-function manejarEnvioFormulario(event) {
+function preventContraseñasInvalidas(event) {
     let contrasenaCambiada = contrasena_input.value.trim() !== '';
     let confirmacionContrasenaCambiada = verificarContrasena_input.value.trim() !== '';
     let metodoPagoSeleccionado = Array.from(radioInputs).some(radio => radio.checked);
@@ -325,12 +334,12 @@ function manejarEnvioFormulario(event) {
         }
     
     }
-
-    if (metodoPagoSeleccionado) {
-        let pagoTarjeta_radio = document.querySelector('input[name="pay-mettod"][value="credit-card"]');
+}
+function preventMetododepagoInvalido(){
+    const pagoTarjeta_radio = document.getElementById('numerotarjeta')
         if (pagoTarjeta_radio.checked) {
-            if (nroTarjeta_input.value === '') {
-                btnsubmit.preventDefault();
+            if (numeroTarjeta_input.value == '') {
+                formulario.preventDefault();
                 alert('Debe ingresar el número de la tarjeta!');
                 return;
             }
@@ -345,13 +354,18 @@ function manejarEnvioFormulario(event) {
                 return;
             }
         }
-    }
-}
+    
+     }
+  
+   
+
+   
+
 
 // Agregar el evento submit al formulario
 
-
-formulario.addEventListener('submit', manejarEnvioFormulario);
+formulario.addEventListener('submit' , preventMetododepagoInvalido)
+formulario.addEventListener('submit', preventContraseñasInvalidas);
 
 //---------------------------------------------------------------------------------------------------------------------
 
