@@ -8,6 +8,11 @@ body{
     display: flex;
     flex-direction: column;
 }
+.textoTarjeta{
+    display: inline;
+    text-align: center;
+    justify-content: center;
+}
 .nombreyfoto img {
     height: 80px;
     width: 80px;
@@ -184,7 +189,7 @@ nav{
     .datos-tarjeta{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .metododepago{
