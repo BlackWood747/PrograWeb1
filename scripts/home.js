@@ -116,7 +116,12 @@ inputBuscador.addEventListener('change', (e) => {
 // Detalle de peliculas
 
 const dibujarDetalle = (pelicula) => {
+    const pelisSimilares = listaPeliculasSeries.filter(
+        (e) => e.genero == pelicula.genero
+    );
+
     layout.innerHTML = `<section class="Descripcion-pelicula">
+    <div class="container-peliculas">
         <article class="caja-1">
           <iframe
             width="560"
@@ -137,10 +142,7 @@ const dibujarDetalle = (pelicula) => {
           <p>${pelicula.duracion}</p>
           <br />
           <p>Genero:</p>
-
           <p>${pelicula.genero}</p>
-        
-         
           <br />
           <p>
           ${pelicula.descripcion}
@@ -152,7 +154,40 @@ const dibujarDetalle = (pelicula) => {
               >Comenzar</a
             >
           </div>
-        </article>`;
+        </article>
+    </div>
+    
+        <section class="peliculas-similares">
+      
+          `;
+    const peliculasSimilaresLayout = document.querySelector('.peliculas-similares');
+
+    pelisSimilares.forEach((e) => {
+        let articleNode = document.createElement('article');
+        articleNode.classList.add('peli');
+
+        let imgArticle = document.createElement('img');
+
+        imgArticle.classList.add('peliImg');
+        imgArticle.src = e.img;
+        imgArticle.alt = e.titulo;
+
+        articleNode.appendChild(imgArticle);
+
+        peliculasSimilaresLayout.appendChild(articleNode);
+    });
+
+    const cajas = document.querySelectorAll('.peli');
+    cajas.forEach((e) => {
+        e.addEventListener('click', (e) => {
+            let titulo = e.target.alt;
+            console.log(titulo);
+            let pelicula = listaPeliculasSeries.find((e) => e.titulo == titulo);
+            console.log(pelicula);
+            window.scroll(0, 0);
+            dibujarDetalle(pelicula);
+        });
+    });
 };
 
 function setearListeners() {
@@ -162,7 +197,7 @@ function setearListeners() {
         e.addEventListener('click', (e) => {
             let titulo = e.target.alt;
             let pelicula = listaPeliculasSeries.find((e) => e.titulo == titulo);
-            window.scroll(0,0)
+            window.scroll(0, 0);
             dibujarDetalle(pelicula);
         });
     });

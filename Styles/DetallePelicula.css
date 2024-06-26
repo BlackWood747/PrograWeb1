@@ -34,8 +34,13 @@ nav {
 
 }
 
+.container-peliculas{
+    display: flex;
+}
+
 .Descripcion-pelicula {
     display: flex;
+    flex-direction: column;
    img {
      box-sizing: border-box;
     width: 100%;
