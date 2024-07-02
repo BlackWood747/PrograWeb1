@@ -210,13 +210,15 @@ nav{
 
 .button-cancel {
     background-color: #ec3049;
-    height: 20px;
+    min-height: 20px;
+    max-height: 20px;
     color: white;
     font-weight: bold;
     padding: 10px 30px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    text-align: center;
 }
 .button-confirm{
      
@@ -229,8 +231,9 @@ nav{
     cursor: pointer;
     border: none;
     display: inline-block;
-    height: 40px;
+    min-height: 40px;
     align-items: center;
+    margin-right: 10px;
 }
 .button-confirm:disabled {
         background-color: #CCCCCC; 
@@ -367,12 +370,32 @@ nav{
 
     .button-confirm {
         margin-bottom: 20px;
+        margin-right: 0px;
     }
 
 }
 
 
-@media screen and (max-width: 1544px) {
 
+@media screen and (min-width: 901px) and (max-width: 1577px) {
+
+    .todosLosDatos {
+        height: 110vh;
+    }
+
+    .li-nuevacontraseña input {
+        margin-left: 0px;
+    }
+
+    #confirmarContraseña {
+        margin-left: 0px;
+    }
+
+    .button-cancel {
+        max-height: none;
+        
+    }
 
 }
+
+
