@@ -120,8 +120,10 @@ const dibujarDetalle = (pelicula) => {
         (e) => e.genero == pelicula.genero
     );
 
-    layout.innerHTML = `<section class="Descripcion-pelicula">
-    <div class="container-peliculas">
+    if (pelicula.categoria == 'pelicula') {
+
+        layout.innerHTML = `<section class="Descripcion-pelicula">
+        <div class="container-peliculas">
         <article class="caja-1">
           <iframe
             width="560"
@@ -160,6 +162,92 @@ const dibujarDetalle = (pelicula) => {
         <section class="peliculas-similares">
       
           `;
+        
+    } else if(pelicula.categoria == 'serie'){
+
+        let opcionesTemporadas = '';
+
+        pelicula.temporadas.forEach(temporada => {
+            opcionesTemporadas += `<option value="${temporada.numero}">Temporada ${temporada.numero}</option>`;
+        });
+
+
+        layout.innerHTML = `<section class="Descripcion-pelicula">
+        <div class="container-peliculas">
+        <article class="caja-1">
+          <iframe
+            width="560"
+            height="315"
+            src=${pelicula.link_pelicula}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </article>
+        <article class="caja-2">
+          <p>Titulo: </p>
+          <p>${pelicula.titulo}</p>
+          <br />
+          <p>Temporadas: </p>
+          <select name="temporadas" id="temporada_select">
+            ${opcionesTemporadas}
+          </select>
+          <p>Capitulo: </p>
+          <select name="capitulos" id="capitulo_select"></select>
+          <p>Duracion:</p>
+          <p>${pelicula.duracion}</p>
+          <br />
+          <p>Genero:</p>
+          <p>${pelicula.genero}</p>
+          <br />
+          <p>
+          ${pelicula.descripcion}
+          </p>
+          <div class="btn-irapelicula">
+            <a
+              href=" ${pelicula.link_pelicula}"
+              target="_blank"
+              >Comenzar</a
+            >
+          </div>
+        </article>
+    </div>
+    
+        <section class="peliculas-similares">
+      
+          `;
+
+
+    // Función para actualizar los capítulos según la temporada seleccionada
+    function actualizarCapitulos() {
+
+        let temporadaSelect = document.getElementById('temporada_select');
+        let capituloSelect = document.getElementById('capitulo_select');
+        let temporadaSeleccionada = parseInt(temporadaSelect.value);
+
+        let temporada = pelicula.temporadas.find(t => t.numero === temporadaSeleccionada);
+        let opcionesCapitulos = '';
+
+        for (let i = 1; i <= temporada.capitulos; i++) {
+            opcionesCapitulos += `<option value="${i}">Capítulo ${i}</option>`;
+        }
+        capituloSelect.innerHTML = opcionesCapitulos;
+
+}
+
+    // Agregar evento para actualizar los capítulos cuando se cambie la temporada
+    document.getElementById('temporada_select').addEventListener('change', actualizarCapitulos);
+
+    // Inicializar los capítulos para la primera temporada por defecto
+    actualizarCapitulos();
+
+
+    }
+
+
+    
     const peliculasSimilaresLayout = document.querySelector('.peliculas-similares');
 
     pelisSimilares.forEach((e) => {

@@ -70,46 +70,18 @@ const listaPeliculasSeries = [
     {
         titulo: 'The Office',
         categoria: 'serie',
-        duracion:  [
-            {
-            temporada: '1',
-            capitulos: '6',
-        },
-        {
-            temporada: '2',
-            capitulos: '22',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '25',
-        },
-        {
-            temporada: '4',
-            capitulos: '19',
-        },
-        
-            {
-            temporada: '5',
-            capitulos: '28',
-        },
-        {
-            temporada: '6',
-            capitulos: '26',
-        },
-        {
-            temporada: '7',
-            capitulos: '26',
-        },
-        {
-            temporada: '8',
-            capitulos: '24',
-        },
-        {
-            temporada: '9',
-            capitulos: '25',
-        },
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 6 },
+            { numero: 2, capitulos: 22 },
+            { numero: 3, capitulos: 23 },
+            { numero: 4, capitulos: 14 },
+            { numero: 5, capitulos: 28 },
+            { numero: 6, capitulos: 26 },
+            { numero: 7, capitulos: 26 },
+            { numero: 8, capitulos: 24 },
+            { numero: 9, capitulos: 24 },
+        ],
+        duracion: '22 minutos por episodio',
         genero: 'comedia',
         detalle: 'theoffice.html',
         img: '/Src Img/theOffice-poster.jpg',
@@ -144,43 +116,12 @@ const listaPeliculasSeries = [
     {
         titulo: 'Regular Show',
         categoria: 'serie',
-        duracion:  [
-            {
-            temporada: '1',
-            capitulos: '12',
-        },
-        {
-            temporada: '2',
-            capitulos: '28',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '40',
-        },
-        {
-            temporada: '4',
-            capitulos: '40',
-        },
-        
-            {
-            temporada: '5',
-            capitulos: '40',
-        },
-        {
-            temporada: '6',
-            capitulos: '31',
-        },
-        {
-            temporada: '7',
-            capitulos: '39',
-        },
-        {
-            temporada: '8',
-            capitulos: '21',
-        },
-        
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 12 },
+            { numero: 2, capitulos: 28 },
+            { numero: 3, capitulos: 39 },
+        ],
+        duracion: '12 minutos por episodio',
         genero: 'comedia',
         detalle: 'regularShow.html',
         img: '/Src Img/regularShow-poster.jpg',
@@ -215,56 +156,20 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'The Walking Dead',
-        duracion:  [
-            {
-            temporada: '1',
-            capitulos: '6',
-        },
-        {
-            temporada: '2',
-            capitulos: '13',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '16',
-        },
-        {
-            temporada: '4',
-            capitulos: '16',
-        },
-        
-            {
-            temporada: '5',
-            capitulos: '16',
-        },
-        {
-            temporada: '6',
-            capitulos: '16',
-        },
-        {
-            temporada: '7',
-            capitulos: '16',
-        },
-        {
-            temporada: '8',
-            capitulos: '16',
-        },
-        
-            {
-            temporada: '9',
-            capitulos: '16',
-        },
-        {
-            temporada: '10',
-            capitulos: '22',
-        },
-        
-            {
-            temporada: '11',
-            capitulos: '24',
-        },
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 6 },
+            { numero: 2, capitulos: 13 },
+            { numero: 3, capitulos: 16 },
+            { numero: 4, capitulos: 16 },
+            { numero: 5, capitulos: 16 },
+            { numero: 6, capitulos: 16 },
+            { numero: 7, capitulos: 16 },
+            { numero: 8, capitulos: 16 },
+            { numero: 9, capitulos: 16 },
+            { numero: 10, capitulos: 22 },
+            { numero: 11, capitulos: 24 },
+        ],
+        duracion: '43 minutos por episodio',
         categoria: 'serie',
         img: '/Src Img/theWalkingDead-poster.jpg',
 
@@ -275,43 +180,14 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'Tom y Jerry',
-        duracion:  [
-            {
-            temporada: '1',
-            capitulos: '161',
-        },
-        {
-            temporada: '2',
-            capitulos: '48',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '15',
-        },
-        {
-            temporada: '4',
-            capitulos: '65',
-        },
-        
-            {
-            temporada: '5',
-            capitulos: '26',
-        },
-        {
-            temporada: '6',
-            capitulos: '104',
-        },
-        {
-            temporada: '7',
-            capitulos: '26',
-        },
-        {
-            temporada: '8',
-            capitulos: '26',
-        },
-        
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 26 },
+            { numero: 2, capitulos: 26 },
+            { numero: 3, capitulos: 24 },
+            { numero: 4, capitulos: 22 },
+            { numero: 5, capitulos: 25 },
+        ],
+        duracion: '10 minutos por episodio',
         categoria: 'serie',
         genero: 'comedia',
         img: '/Src Img/tomYJerry-poster.jpg',
@@ -322,34 +198,15 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'Vikings',
-        duracion:  [
-            {
-            temporada: '1',
-            capitulos: '9',
-        },
-        {
-            temporada: '2',
-            capitulos: '10',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '10',
-        },
-        {
-            temporada: '4',
-            capitulos: '20',
-        },
-        
-            {
-            temporada: '5',
-            capitulos: '20',
-        },
-        {
-            temporada: '6',
-            capitulos: '20',
-        },
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 9 },
+            { numero: 2, capitulos: 10 },
+            { numero: 3, capitulos: 10 },
+            { numero: 4, capitulos: 20 },
+            { numero: 5, capitulos: 20 },
+            { numero: 6, capitulos: 20 },
+        ],
+        duracion: '30 minutos por episodio',
         categoria: 'serie',
         genero: 'accion',
         descripcion:
@@ -390,29 +247,14 @@ const listaPeliculasSeries = [
     {
         titulo: 'Money Heist',
         categoria: 'serie',
-        duracion: [
-            {
-                temporada: '1',
-                capitulos: '10',
-            },
-            {
-                temporada: '2',
-                capitulos: '10',
-            },
-            {
-                temporada: '3',
-                capitulos: '8',
-            },
-            {
-                temporada: '4',
-                capitulos: '8',
-            },
-            {
-                temporada: '5',
-                capitulos: '10',
-            },
+        temporadas: [
+            { numero: 1, capitulos: 10 },
+            { numero: 2, capitulos: 10 },
+            { numero: 3, capitulos: 8 },
+            { numero: 4, capitulos: 8 },
+            { numero: 5, capitulos: 10 },
         ],
-        
+        duracion: '45 minutos por episodio',
         genero: 'accion',
         descripcion:
             'Un grupo de atracadores toma el control de la Fábrica Nacional de Moneda y Timbre de España, con el fin de llevar a cabo el mayor atraco de la historia.',
@@ -424,26 +266,13 @@ const listaPeliculasSeries = [
     {
         titulo: 'Stranger Things',
         categoria: 'serie',
-        duracion: [
-            {
-            temporada: '1',
-            capitulos: '10',
-        },
-        {
-            temporada: '2',
-            capitulos: '10',
-        },
-        {
-            temporada: '3',
-            capitulos: '10',
-        },
-        {
-            temporada: '4',
-            capitulos: '10',
-        },
-    ],
-        
-        
+        temporadas: [
+            { numero: 1, capitulos: 10 },
+            { numero: 2, capitulos: 10 },
+            { numero: 3, capitulos: 10 },
+            { numero: 4, capitulos: 10 },
+        ],
+        duracion: '55 minutos por episodio',  
         genero: 'cienciaFiccion',
         descripcion:
             'En la década de 1980, en un pequeño pueblo de Indiana, un niño desaparece misteriosamente. Mientras la policía, su familia y sus amigos buscan respuestas, se ven envueltos en una serie de eventos sobrenaturales.',
@@ -463,22 +292,12 @@ const listaPeliculasSeries = [
     {
         titulo: 'The Mandalorian',
         categoria: 'serie',
-        duracion: [
-            {
-            temporada: '1',
-            capitulos: '8',
-        },
-        {
-            temporada: '2',
-            capitulos: '8',
-        },
-        {
-            temporada: '3',
-            capitulos: '8',
-        },
-       
-    ],
-        
+        temporadas: [
+            { numero: 1, capitulos: 8 },
+            { numero: 2, capitulos: 8 },
+            { numero: 3, capitulos: 8 },
+        ],
+        duracion: '45 minutos por episodio',
         genero: 'cienciaFiccion',
         descripcion:
             'Un cazarrecompensas solitario se mueve por los rincones más remotos de la galaxia, lejos de los dominios de la Nueva República.',
@@ -498,19 +317,11 @@ const listaPeliculasSeries = [
     {
         titulo: 'La Purga',
         categoria: 'serie',
-        duracion: [
-            {
-            temporada: '1',
-            capitulos: '10',
-        },
-        {
-            temporada: '2',
-            capitulos: '10',
-        },
-       
-       
-    ],
-        
+        temporadas: [
+            { numero: 1, capitulos: 10 },
+            { numero: 2, capitulos: 10 },
+        ],
+        duracion: '43 minutos por episodio',
         genero: 'terror',
         descripcion:
             'En un Estados Unidos distópico, el gobierno legaliza durante 12 horas al año todos los crímenes, incluidos el asesinato y la violencia, con el fin de reducir la tasa de criminalidad durante el resto del año.',
@@ -530,56 +341,21 @@ const listaPeliculasSeries = [
     {
         titulo: 'American Horror Story',
         categoria: 'serie',
-        duracion: [
-            {
-            temporada: '1',
-            capitulos: '12',
-        },
-        {
-            temporada: '2',
-            capitulos: '13',
-        },
-        {
-            temporada: '3',
-            capitulos: '13',
-        },
-        {
-            temporada: '4',
-            capitulos: '13',
-        },
-        {
-            temporada: '5',
-            capitulos: '12',
-        },
-        {
-            temporada: '6',
-            capitulos: '12',
-        },
-        {
-            temporada: '7',
-            capitulos: '11',
-        },
-        {
-            temporada: '8',
-            capitulos: '10',
-        },
-        {
-            temporada: '9',
-            capitulos: '9',
-        },
-        {
-            temporada: '10',
-            capitulos: '10',
-        },
-        {
-            temporada: '11',
-            capitulos: '10',
-        },
-        {
-            temporada: '12',
-            capitulos: '11',
-        },
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 12 },
+            { numero: 2, capitulos: 13 },
+            { numero: 3, capitulos: 13 },
+            { numero: 4, capitulos: 13 },
+            { numero: 5, capitulos: 12 },
+            { numero: 6, capitulos: 12 },
+            { numero: 7, capitulos: 11 },
+            { numero: 8, capitulos: 10 },
+            { numero: 9, capitulos: 9 },
+            { numero: 10, capitulos: 10 },
+            { numero: 11, capitulos: 10 },
+            { numero: 12, capitulos: 11 }
+        ],
+        duracion: '50 minutos por episodio',
         
         genero: 'terror',
         descripcion:
@@ -600,34 +376,15 @@ const listaPeliculasSeries = [
     {
         titulo: 'This Is Us',
         categoria: 'serie',
-        duracion: [
-            {
-            temporada: '1',
-            capitulos: '18',
-        },
-        {
-            temporada: '2',
-            capitulos: '18',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '18',
-        },
-        {
-            temporada: '4',
-            capitulos: '18',
-        },
-        
-            {
-            temporada: '5',
-            capitulos: '16',
-        },
-        {
-            temporada: '6',
-            capitulos: '18',
-        },
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 18 },
+            { numero: 2, capitulos: 18 },
+            { numero: 3, capitulos: 18 },
+            { numero: 4, capitulos: 18 },
+            { numero: 5, capitulos: 16 },
+            { numero: 6, capitulos: 18 }
+        ],
+        duracion: '60 minutos por episodio',
         genero: 'drama',
         descripcion:
             'Una familia estadounidense examina su pasado y su presente a través de tres líneas de tiempo diferentes que se entrelazan.',
@@ -637,34 +394,15 @@ const listaPeliculasSeries = [
     {
         titulo: 'The Crown',
         categoria: 'serie',
-        duracion: [
-            {
-            temporada: '1',
-            capitulos: '10',
-        },
-        {
-            temporada: '2',
-            capitulos: '10',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '10',
-        },
-        {
-            temporada: '4',
-            capitulos: '10',
-        },
-        
-            {
-            temporada: '5',
-            capitulos: '10',
-        },
-        {
-            temporada: '6',
-            capitulos: '12',
-        },
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 10 },
+            { numero: 2, capitulos: 10 },
+            { numero: 3, capitulos: 10 },
+            { numero: 4, capitulos: 10 },
+            { numero: 5, capitulos: 10 },
+            { numero: 6, capitulos: 12 }
+        ],
+        duracion: '52 minutos por episodio',
         genero: 'drama',
         descripcion:
             'Una mirada íntima a la vida de la Reina Isabel II y los eventos políticos y personales que han definido su reinado.',
@@ -674,27 +412,13 @@ const listaPeliculasSeries = [
     {
         titulo: 'Succession',
         categoria: 'serie',
-        duracion:  [
-            {
-            temporada: '1',
-            capitulos: '10',
-        },
-        {
-            temporada: '2',
-            capitulos: '10',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '9',
-        },
-        {
-            temporada: '4',
-            capitulos: '10',
-        },
-        
-          
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 10 },
+            { numero: 2, capitulos: 10 },
+            { numero: 3, capitulos: 9 },
+            { numero: 4, capitulos: 10 }
+        ],
+        duracion: '90 minutos por episodio',
         genero: 'drama',
         descripcion:
             'La familia Roy, dueña de una de las mayores corporaciones de medios y entretenimiento, lucha por el control de la compañía mientras enfrenta escándalos internos.',
@@ -703,27 +427,13 @@ const listaPeliculasSeries = [
     },
     {
         titulo: 'Ozark',
-        categoria:  [
-            {
-            temporada: '1',
-            capitulos: '10',
-        },
-        {
-            temporada: '2',
-            capitulos: '10',
-        },
-        
-            {
-            temporada: '3',
-            capitulos: '10',
-        },
-        {
-            temporada: '4',
-            capitulos: '14',
-        },
-        
-          
-    ],
+        categoria: 'serie',
+        temporadas: [
+            { numero: 1, capitulos: 10 },
+            { numero: 2, capitulos: 10 },
+            { numero: 3, capitulos: 10 },
+            { numero: 4, capitulos: 14 }
+        ],
         duracion: '60 minutos por episodio',
         genero: 'drama',
         descripcion:
@@ -734,16 +444,11 @@ const listaPeliculasSeries = [
     {
         titulo: 'Yellowjackets',
         categoria: 'serie',
-        duracion:  [
-            {
-            temporada: '1',
-            capitulos: '10',
-        },
-        {
-            temporada: '2',
-            capitulos: '9',
-        },
-    ],
+        temporadas: [
+            { numero: 1, capitulos: 10 },
+            { numero: 2, capitulos: 9 }
+        ],
+        duracion: '56 minutos por episodio',
         genero: 'drama',
         descripcion:
             'Sigue la historia de un equipo de fútbol femenino de instituto que sobrevive a un accidente aéreo en el bosque, explorando tanto los eventos presentes como los traumas de su pasado.',
