@@ -59,7 +59,7 @@ const dibujarLista = (lista) => {
     }
 };
 dibujarLista(listaPeliculasSeries);
-
+dibujarLista(listaPeliculasSeries);
 const selectGenero = document.querySelector('.selectGenero');
 
 const filtrar = (cat, gen) => {
@@ -203,3 +203,18 @@ function setearListeners() {
     });
 }
 setearListeners();
+
+function buscarPorNombre(){
+    
+    
+    const buscar = inputBuscador.value.toLowerCase();
+   const filtradasPorNombre = listaPeliculasSeries.filter(pelicula =>{
+      return  pelicula.titulo.toLowerCase().includes(buscar);
+    }
+    
+    )
+    dibujarLista(filtradasPorNombre)
+}
+
+ inputBuscador.addEventListener('input' , buscarPorNombre);
+ dibujarLista(listaPeliculasSeries)
