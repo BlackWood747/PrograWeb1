@@ -28,111 +28,122 @@
 
 
     <section class="todosLosDatos">
-        <div class="nombreyfoto">
+
+        <div class="form1_container">
+
+            <div class="nombreyfoto">
 
 
-            <img src="/Src Img/fotoperfil.png" alt="">
-            
-        </div>
-
-
-        <div class="emailYContraseña">
-            <ul>
-                <div class="email">
-                    <li>Email:</li>
-                    <li id="email"></li>
-                </div>
-                <div class="contraseña">
-                    <li>Contraseña:</li>
-                    <li id="liContraseña"></li>
-
-
-                    <form class="nuevaContrasena_form" action="/HTML/perfil.html" method="get">
-                        <li class="li-nuevacontraseña"> <label for="nuevaContraseña">Nueva contraseña</label>
-                            <input type="password" name="nuevaContraseña" id="nuevaContraseña"
-                                placeholder="Escriba una contraseña">
-                        </li>
-                        <li id="confirmcontraseña"><label for="confirmarContraseña">
-                                Confirmar contraseña </label>
-                            <input type="password" name="confirmarContraseña" id="confirmarContraseña"
-                                placeholder="Confirme la contraseña">
-                                   
-                        </li>
-                        <p class="contrasena_requerimientos">La contraseña debe tener al menos <span class="requerimiento_8caracteres">8 caracteres</span>
-                            (<span class="requerimiento_2letras">mínimo 2 letras</span>, <span class="requerimiento_2nros">2 números</span>
-                            y <span class="requerimiento_2caracEspeciales">2 caracteres especiales</span>)</p>
-                </div>
-            </ul>
-        </div>
-
-        <div class="metododepago">
-
-            <div class="metodoDePagoDelUsuario_container">
+                <img src="/Src Img/fotoperfil.png" alt="">
                 
             </div>
+    
+    
+            <div class="emailYContraseña">
+                <ul>
+                    <div class="email">
 
+                        <div class="email_li">
+                            <li>Email:</li>
+                            <li id="email"></li>
+                        </div>
 
-            <div class="pago-tarjeta">
+                        <div class="contrasena_li">
+                            <li>Contraseña:</li>
+                            <li id="liContraseña"></li>
+                        </div>
+                    </div>
+                    <div class="contraseña">
+    
+                        <form class="nuevaContrasena_form" action="/HTML/perfil.html" method="get">
+                            <li class="li-nuevacontraseña"> <label for="nuevaContraseña">Nueva contraseña</label>
+                                <input type="password" name="nuevaContraseña" id="nuevaContraseña"
+                                    placeholder="Escriba una contraseña">
+                            </li>
+                            <li id="confirmcontraseña"><label for="confirmarContraseña">
+                                    Confirmar contraseña </label>
+                                <input type="password" name="confirmarContraseña" id="confirmarContraseña"
+                                    placeholder="Confirme la contraseña">
+                                       
+                            </li>
+                            <p class="contrasena_requerimientos">La contraseña debe tener al menos <span class="requerimiento_8caracteres">8 caracteres</span>
+                                (<span class="requerimiento_2letras">mínimo 2 letras</span>, <span class="requerimiento_2nros">2 números</span>
+                                y <span class="requerimiento_2caracEspeciales">2 caracteres especiales</span>)</p>
+                    </div>
+                </ul>
+            </div>
 
-                <div class="centrado-radioYLabel">
-                    <input type="radio" id="credit-card" name="pay-mettod" value="credit-card">
-                    <label for="credit-card">Tarjeta de credito</label>
-                </div>
-                <!-- <input type="radio" id="credit-card" name="pay-mettod" value="credit-card">
-                <label for="credit-card">Tarjeta de credito</label> -->
+        </div>
 
-                <div class="datos-tarjeta">
+        <div class="form2_container">
 
+            <div class="metododepago">
+
+                <div class="metodoDePagoDelUsuario_container">
+                    <h3 class="metodoDePagoEnUso_title">METODO DE PAGO EN USO</h3>
                     
-
-                    <label id="textoTarjeta" for="numerotarjeta">Numero Tarjeta</label>
-
-                    <input class="numerotarjeta" type="text" placeholder="Numero de tarjeta"
-                    name="numerotarjeta" id="numerotarjeta">
-                    <p id="tarjetavalida"></p>
-                    <label for="codigotarjeta"></label>
-                    <input class="codigotarjeta" type="text" placeholder="XXX" name="codigotarjeta" id="codigotarjeta">
-                    <p id="clavevalida"> </p>
                 </div>
-            </div>
+                
+                <p>Seleccione una opcion para cambiar su metodo de pago</p>
+    
+                <div class="pago-tarjeta">
+    
+                    <div class="centrado-radioYLabel">
+                        <input type="radio" id="credit-card" name="pay-mettod" value="credit-card">
+                        <label for="credit-card">Tarjeta de credito</label>
+                    </div>
 
-
-
-            <div class="pago-cupon">
-
-                <div class="centrado-radioYLabel">
-                    <input type="radio" id="cupon" name="pay-mettod" value="cupon">
-                    <label for="cupon">Cupon de pago</label>
+    
+                    <div class="datos-tarjeta">
+    
+                        
+    
+                        <label id="textoTarjeta" for="numerotarjeta">Numero Tarjeta</label>
+    
+                        <input class="numerotarjeta" type="text" placeholder="Numero de tarjeta"
+                        name="numerotarjeta" id="numerotarjeta">
+                        <p id="tarjetavalida"></p>
+                        <label for="codigotarjeta">Clave Tarjeta</label>
+                        <input class="codigotarjeta" type="text" placeholder="XXX" name="codigotarjeta" id="codigotarjeta">
+                        <p id="clavevalida"> </p>
+                    </div>
                 </div>
-
-
-            </div>
-            <!-- <input type="radio" id="cupon"name="pay-mettod" value="cupon">
-            <label for="cupon">Cupon de pago</label> -->
-
-
-            <div class="checkboxes-cupon">
-                <label for="pagoFacil">Pago facil</label>
-                <input type="radio" name="metodoCupon" id="pagoFacil" value="pagoFacil">
-                
-               <label for="rapiPago">RapiPago</label>
-                <input type="radio" name="metodoCupon" id="rapiPago" value="rapiPago">
-                
-            </div>
-
-
-            <div class="pago-transferencia">
-
-                <div class="centrado-radioYLabel">
-                    <input type="radio" id="transferencia" name="pay-mettod" value="transferencia">
-                    <label for="transferencia">Transferencia</label>
+    
+    
+    
+                <div class="pago-cupon">
+    
+                    <div class="centrado-radioYLabel">
+                        <input type="radio" id="cupon" name="pay-mettod" value="cupon">
+                        <label for="cupon">Cupon de pago</label>
+                    </div>
+    
     
                 </div>
     
-                <p>CBU: 85487632481526987</p>
-                <!-- <input type="radio" id="transferencia"name="pay-mettod" value="transferencia">
-                <label for="transferencia">Transferencia</label>
-                <p>CBU: 85487632481526987</p> -->
+    
+                <div class="checkboxes-cupon">
+                    
+                    <input type="radio" name="metodoCupon" id="pagoFacil" value="pagoFacil">
+                    <label for="pagoFacil">Pago facil</label>
+                    
+                    <input type="radio" name="metodoCupon" id="rapiPago" value="rapiPago">
+                    <label for="rapiPago">RapiPago</label>
+                    
+                </div>
+    
+    
+                <div class="pago-transferencia">
+    
+                    <div class="centrado-radioYLabel">
+                        <input type="radio" id="transferencia" name="pay-mettod" value="transferencia">
+                        <label for="transferencia">Transferencia</label>
+        
+                    </div>
+        
+                    <p class="cbu_p">CBU: 85487632481526987</p>
+        
+                </div>
     
             </div>
 

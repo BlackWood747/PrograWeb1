@@ -625,20 +625,20 @@ function mostrarMedioDepagoDelUsuario(){
 
                 const metodoDePagoDelUsuario_container = document.querySelector(".metodoDePagoDelUsuario_container");
                 const pMetodoDePago = document.createElement('p');
-                pMetodoDePago.textContent = "Metodo de pago en uso: Tarjeta de credito";
-                pMetodoDePago.style.display = 'inline';
+                pMetodoDePago.textContent = "Tarjeta de credito";
+                pMetodoDePago.classList.add("metodoDePago_p");
                 metodoDePagoDelUsuario_container.appendChild(pMetodoDePago);
 
                 const pNroTarjeta = document.createElement('p');
                 const nroTarjeta = usuario.nroTarjeta;
                 pNroTarjeta.textContent = "Numero de tarjeta: " + nroTarjeta;
-                pNroTarjeta.style.display = 'inline';
+                pNroTarjeta.classList.add("metodoDePago_p");
                 metodoDePagoDelUsuario_container.appendChild(pNroTarjeta);
 
                 const pClaveTarjeta = document.createElement('p');
                 const claveTarjeta = usuario.claveTarjeta;
                 pClaveTarjeta.textContent = "Clave de tarjeta: " + claveTarjeta;
-                pClaveTarjeta.style.display = 'inline';
+                pClaveTarjeta.classList.add("metodoDePago_p");
                 metodoDePagoDelUsuario_container.appendChild(pClaveTarjeta);
 
             }
@@ -647,15 +647,15 @@ function mostrarMedioDepagoDelUsuario(){
 
                 const metodoDePagoDelUsuario_container = document.querySelector(".metodoDePagoDelUsuario_container");
                 const pMetodoDePago = document.createElement('p');
-                pMetodoDePago.textContent = "Metodo de pago en uso: Cupon de pago";
-                pMetodoDePago.style.display = 'inline';
+                pMetodoDePago.textContent = "Cupon de pago";
+                pMetodoDePago.classList.add("metodoDePago_p");
                 metodoDePagoDelUsuario_container.appendChild(pMetodoDePago);
 
                 if (usuario.metodoCupon == "pagoFacil") {
 
                     const pMetodoCupon = document.createElement('p');
                     pMetodoCupon.textContent = "Metodo de cupon: Pago Facil";
-                    pMetodoCupon.style.display = 'inline';
+                    pMetodoCupon.classList.add("metodoDePago_p");
                     metodoDePagoDelUsuario_container.appendChild(pMetodoCupon); 
                     
                 }
@@ -664,7 +664,7 @@ function mostrarMedioDepagoDelUsuario(){
 
                     const pMetodoCupon = document.createElement('p');
                     pMetodoCupon.textContent = "Metodo de cupon: RapiPago";
-                    pMetodoCupon.style.display = 'inline';
+                    pMetodoCupon.classList.add("metodoDePago_p");
                     metodoDePagoDelUsuario_container.appendChild(pMetodoCupon); 
                     
                 }
@@ -677,8 +677,8 @@ function mostrarMedioDepagoDelUsuario(){
 
                 const metodoDePagoDelUsuario_container = document.querySelector(".metodoDePagoDelUsuario_container");
                 const pMetodoDePago = document.createElement('p');
-                pMetodoDePago.textContent = "Metodo de pago en uso: Transferencia";
-                pMetodoDePago.style.display = 'inline';
+                pMetodoDePago.textContent = "Transferencia";
+                pMetodoDePago.classList.add("metodoDePago_p");
                 metodoDePagoDelUsuario_container.appendChild(pMetodoDePago);
 
                 const pCbu = document.createElement('p');
