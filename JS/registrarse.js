@@ -321,13 +321,18 @@ validarNumeroTarjeta();
 
 let formulario = document.querySelector(".formulario")
 
-function crearUsuario(nombre, apellido, email, nombreDeUsuario, contrasena) {
+function crearUsuario(nombre, apellido, email, nombreDeUsuario, contrasena, medioDePago, nroTarjeta, claveTarjeta, metodoCupon, logeado) {
     return {
         nombre: nombre,
         apellido: apellido,
         email: email,
         nombreDeUsuario: nombreDeUsuario,
-        contrasena: contrasena
+        contrasena: contrasena,
+        medioDePago: medioDePago,
+        nroTarjeta: nroTarjeta,
+        claveTarjeta: claveTarjeta,
+        metodoCupon: metodoCupon,
+        logeado: logeado
     };
 }
 
@@ -338,9 +343,9 @@ function guardarUsuario(usuario) {
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 }
 
-function registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena) {
+function registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena, medioDePago, nroTarjeta, claveTarjeta, metodoCupon, logeado) {
 
-    let nuevoUsuario = crearUsuario(nombre, apellido, email, nombreDeUsuario, contrasena);
+    let nuevoUsuario = crearUsuario(nombre, apellido, email, nombreDeUsuario, contrasena, medioDePago,  nroTarjeta, claveTarjeta, metodoCupon, false);
     guardarUsuario(nuevoUsuario);
     console.log('Usuario registrado con éxito');
 }
@@ -360,6 +365,7 @@ function formularioPrevent(event) {
     let nombreDeUsuario = document.querySelector('#usuario').value;
     let contrasena = document.querySelector('#password').value;
 
+
     let radioInputs = document.querySelectorAll('input[type="radio"]');
     let isRadioChecked = Array.from(radioInputs).some(radio => radio.checked);
 
@@ -369,6 +375,7 @@ function formularioPrevent(event) {
     let pagoCupon_radio = document.querySelector('#cupon');
     let pagoFacil_checkbox = document.querySelector('#pagoFacil');
     let rapipago_checkbox = document.querySelector('#rapipago');
+    let transferencia_radio = document.querySelector('#transferencia');
 
     if (contrasenaValida != true) {
 
@@ -398,6 +405,7 @@ function formularioPrevent(event) {
     }
 
     if (pagoTarjeta_radio.checked) {
+
         if (nroTarjeta_input.value.trim() === '') {
 
             event.preventDefault();
@@ -450,8 +458,38 @@ function formularioPrevent(event) {
         return;
 
     } else {
+
+        if (pagoTarjeta_radio.checked) {
+            
+            let medioDePago = pagoTarjeta_radio.value;
+            
+            registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena, medioDePago, nroTarjeta_input.value, claveTarjeta_input.value, null);
+
+        }
+    
+        if (pagoCupon_radio.checked) {
+
+            let medioDePago = pagoCupon_radio.value;
+
+            if (pagoFacil_checkbox.checked) {
+
+                registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena, medioDePago, null, null, pagoFacil_checkbox.value);
+            }
+    
+            if (rapipago_checkbox.checked) {
+    
+                registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena, medioDePago, null, null, rapipago_checkbox.value);
+            }
+        }
+
+        if (transferencia_radio.checked) {
+            
+            let medioDePago = transferencia_radio.value;
+
+            registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena, medioDePago, null, null, null);
+
+        }
                 
-        registrarUsuario(nombre, apellido, email, nombreDeUsuario, contrasena);
     }
 
 }

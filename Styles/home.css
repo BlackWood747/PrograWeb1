@@ -7,6 +7,7 @@
     margin-top: 10px;
 
 }
+
 .iconoDeUsuario_container{
     gap: 20px;
 }
@@ -19,9 +20,6 @@
 .iconoDeUsuario_container p:hover {
     color: rgb(255, 72, 255);
 }
-
-
-
 
 .filtrarPorCategoria select {
     width: 300px;
@@ -36,6 +34,19 @@
     color: rgba(0, 0, 0, 0.397);
 }
 
+.cerrarSesion_container {
+    align-content: center;
+}
+
+.cerrarSesion {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.cerrarSesion:hover {
+
+    color: rgb(255, 72, 255);}
 
 .buscarPorNombre {
     display: flex;

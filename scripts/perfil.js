@@ -320,42 +320,182 @@ radioInputs.forEach(radio => {
     radio.addEventListener('change', habilitarBotonGuardar);
 });
 let formulario = document.querySelector('.nuevaContrasena_form')
+
 // Función para manejar el envío del formulario
 function preventContraseñasInvalidas(event) {
     let contrasenaCambiada = contrasena_input.value.trim() !== '';
     let confirmacionContrasenaCambiada = verificarContrasena_input.value.trim() !== '';
     let metodoPagoSeleccionado = Array.from(radioInputs).some(radio => radio.checked);
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
     if (contrasenaCambiada || confirmacionContrasenaCambiada) {
         if (contrasenaValida  != true || contrasenaVerificada != true) {
             event.preventDefault();
             alert("La contraseña no es válida o las contraseñas no coinciden.");
             return;
+        } else {
+
+            usuarios = usuarios.map(usuario => {
+                if (usuario.logeado) {
+                    usuario.contrasena = contrasena_input.value;
+                }
+
+                return usuario;
+            });
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
         }
     
     }
 }
-function preventMetododepagoInvalido(){
-    const pagoTarjeta_radio = document.getElementById('numerotarjeta')
-        if (pagoTarjeta_radio.checked) {
-            if (numeroTarjeta_input.value == '') {
-                formulario.preventDefault();
-                alert('Debe ingresar el número de la tarjeta!');
-                return;
-            }
-            if (codigoTarjeta_input.value.trim() === '') {
-                btnsubmit.preventDefault();
-                alert('Debe ingresar el código de la tarjeta!');
-                return;
-            }
-            if (!numeroTarjetaValida || !claveTarjetaValida) {
-                btnsubmit.preventDefault();
-                alert('Los datos de la tarjeta no son válidos.');
-                return;
-            }
+
+
+function preventMetododepagoInvalido(event){
+
+    let pagoTarjeta_radio = document.querySelector("#credit-card");
+    let numeroTarjeta_input = document.querySelector("#numerotarjeta");
+    let claveTarjeta_input = document.querySelector("#codigotarjeta");
+
+    let pagoCupon_radio = document.querySelector("#cupon");
+    let pagoFacil_radio = document.querySelector("#pagoFacil");
+    let rapipago_radio = document.querySelector("#rapiPago");
+
+    let transferencia_radio = document.querySelector("#transferencia");
+
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // if (pagoTarjeta_radio.checked) {
+
+    //     if (numeroTarjeta_input.value == '') {
+    //         event.preventDefault();
+    //         alert('Debe ingresar el número de la tarjeta!');
+    //         return;
+    //     }
+            
+    //     if (codigoTarjeta_input.value.trim() === '') {
+    //         event.preventDefault();
+    //         alert('Debe ingresar el código de la tarjeta!');
+    //         return;
+    //     }
+            
+    //     if (!numeroTarjetaValida || !claveTarjetaValida) {
+    //         event.preventDefault();
+    //         alert('Los datos de la tarjeta no son válidos.');
+    //         return;
+    //     }
+    // }
+
+    if (pagoTarjeta_radio.checked) {
+
+        if (numeroTarjeta_input.value.trim() === '') {
+
+            event.preventDefault();
+            alert('Debe ingresar el numero de la tarjeta!');
+            return;
         }
-    
-     }
+
+        if (numeroTarjetaValida == false) {
+
+            event.preventDefault();
+            alert('El numero de la tarjeta es invalido!');
+            return;
+        }
+
+        if (claveTarjeta_input.value.trim() === '') {
+
+            event.preventDefault();
+            alert('Debe ingresar la clave de la tarjeta!');
+            return;
+        }
+
+        if (claveTarjeta_input.value === "000") {
+
+            event.preventDefault();
+            alert('La clave de la tarjeta no puede ser 000!');
+            return;
+        }
+
+        if (claveTarjetaValida == false) {
+
+            event.preventDefault();
+            alert('La clave de la tarjeta es invalida!');
+            return;
+
+        } else {
+
+            usuarios = usuarios.map(usuario => {
+                if (usuario.logeado) {
+                    usuario.medioDePago = pagoTarjeta_radio.value;
+                    usuario.nroTarjeta = numeroTarjeta_input.value;
+                    usuario.claveTarjeta = claveTarjeta_input.value;
+                    usuario.metodoCupon = null
+                }
+
+                return usuario;
+            });
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+        }
+    }
+
+    if (pagoCupon_radio.checked) {
+
+        if (!pagoFacil_radio.checked && !rapipago_radio.checked) {
+
+            event.preventDefault();
+            alert('Debe seleccionar al menos una opción de cupón (Pago Fácil o RapiPago)');
+            return;
+
+        }
+
+        if (pagoFacil_radio.checked) {
+            
+            usuarios = usuarios.map(usuario => {
+
+                if (usuario.logeado) {
+                    usuario.medioDePago = pagoCupon_radio.value;
+                    usuario.metodoCupon = pagoFacil_radio.value;
+                    usuario.nroTarjeta = null;
+                    usuario.claveTarjeta = null;
+                }
+
+                return usuario;
+            });
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+            
+        } else if(rapipago_radio.checked) {
+
+            usuarios = usuarios.map(usuario => {
+
+                if (usuario.logeado) {
+                    usuario.medioDePago = pagoCupon_radio.value;
+                    usuario.metodoCupon = rapipago_radio.value;
+                    usuario.nroTarjeta = null;
+                    usuario.claveTarjeta = null;
+                }
+
+                return usuario;
+            });
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        }
+    }
+
+    if (transferencia_radio.checked) {
+
+        usuarios = usuarios.map(usuario => {
+
+            if (usuario.logeado) {
+                usuario.medioDePago = transferencia_radio.value;
+                usuario.metodoCupon = null;
+                usuario.nroTarjeta = null;
+                usuario.claveTarjeta = null;
+            }
+
+            return usuario;
+        });
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    }
+
+}
   
    
 
@@ -375,14 +515,27 @@ formulario.addEventListener('submit', preventContraseñasInvalidas);
 
 // funcion para mostrar el nombre de usuario, obteniendolo del array usuarios. 
 function mostrarnombreDeUsuario(){
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const nombreDeUsuario = usuarios[0].nombreDeUsuario
-    const nombreElemento = document.createElement("p");
-    nombreElemento.textContent = nombreDeUsuario;
+    // let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    // const nombreDeUsuario = usuarios[0].nombreDeUsuario
+    // const nombreElemento = document.createElement("p");
+    // nombreElemento.textContent = nombreDeUsuario;
+    // const nombreYFoto = document.querySelector('.nombreyfoto');
+    // nombreYFoto.appendChild(nombreElemento); 
 
-    
-    const nombreYFoto = document.querySelector('.nombreyfoto');
-    nombreYFoto.appendChild(nombreElemento); 
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    usuarios = usuarios.map(usuario => {
+
+        if (usuario.logeado === true) {
+
+            const nombreYFoto = document.querySelector('.nombreyfoto');
+            const nombreElemento = document.createElement("p");
+            const nombreDeUsuario = usuario.nombreDeUsuario
+            nombreElemento.textContent = nombreDeUsuario;
+            nombreYFoto.appendChild(nombreElemento);
+
+        }
+    });
 
     
 }
@@ -391,35 +544,184 @@ mostrarnombreDeUsuario();
 
 // funcion para mostrar el email del usuario 
 function mostrarEmail(){
+    // let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    // const pEmail = document.createElement("p");
+    // const email = usuarios[0].email;
+    // const liEmail = document.getElementById('email');
+    // pEmail.textContent = email;
+    // pEmail.style.display = 'inline';
+    // liEmail.appendChild(pEmail)
+
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const pEmail = document.createElement("p");
-    const email = usuarios[0].email;
-    const liEmail = document.getElementById('email');
-    pEmail.textContent = email;
-    pEmail.style.display = 'inline';
-    liEmail.appendChild(pEmail)
+
+    usuarios = usuarios.map(usuario => {
+
+        if (usuario.logeado === true) {
+
+            const liEmail = document.getElementById('email');
+            const pEmail = document.createElement("p");
+            const email = usuario.email;
+            pEmail.textContent = email;
+            pEmail.style.display = 'inline';
+            liEmail.appendChild(pEmail)
+
+        }
+    });
 
 }
 mostrarEmail();
 
 // funcion para mostrar la contraseña del usuario
 function mostrarContraseña(){
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const pContraseña = document.createElement('p');
-    const liContraseña = document.getElementById('liContraseña');
-     const contraseña = usuarios[0].contrasena;
-     pContraseña.textContent = contraseña;
-     pContraseña.style.display = 'inline';
-     liContraseña.appendChild(pContraseña)
-    
-    }
-    mostrarContraseña()
-    const btnsubmit = document.querySelector('.nuevaContrasena_form')
-    function evitarEnvioFormulario(event){
-        let contrasena = contrasena_input.value;
-        if (contraseña != null){
-        alert("erorrr")
-        }
 
+    // let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    // const pContraseña = document.createElement('p');
+    // const liContraseña = document.getElementById('liContraseña');
+    // const contraseña = usuarios[0].contrasena;
+    // pContraseña.textContent = contraseña;
+    // pContraseña.style.display = 'inline';
+    // liContraseña.appendChild(pContraseña)
+
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    usuarios = usuarios.map(usuario => {
+
+        if (usuario.logeado === true) {
+
+            const liContraseña = document.getElementById('liContraseña');
+            const pContraseña = document.createElement('p');
+            const contraseña = usuario.contrasena;
+            pContraseña.textContent = contraseña;
+            pContraseña.style.display = 'inline';
+            liContraseña.appendChild(pContraseña);
+
+        }
+    });
+  
+}
+mostrarContraseña()
+
+
+// funcion para mostrar el medio de pago del usuario logeado, obteniendolo del array usuarios. 
+function mostrarMedioDepagoDelUsuario(){
+
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // let pagoTarjeta_radio = document.querySelector("#credit-card");
+    // let nroTarjeta_input = document.querySelector("#numerotarjeta");
+    // let claveTarjeta_input = document.querySelector("#codigotarjeta");
+
+    // let pagoCupon_radio = document.querySelector("#cupon");
+    // let pagoFacil_radio = document.querySelector("#pagoFacil");
+    // let rapiPago_radio = document.querySelector("#rapiPago");
+
+    // let transferencia_radio = document.querySelector("#transferencia");
+
+    usuarios = usuarios.map(usuario => {
+
+        if (usuario.logeado === true) {
+
+            if (usuario.medioDePago == "credit-card") {
+
+                const metodoDePagoDelUsuario_container = document.querySelector(".metodoDePagoDelUsuario_container");
+                const pMetodoDePago = document.createElement('p');
+                pMetodoDePago.textContent = "Metodo de pago en uso: Tarjeta de credito";
+                pMetodoDePago.style.display = 'inline';
+                metodoDePagoDelUsuario_container.appendChild(pMetodoDePago);
+
+                const pNroTarjeta = document.createElement('p');
+                const nroTarjeta = usuario.nroTarjeta;
+                pNroTarjeta.textContent = "Numero de tarjeta: " + nroTarjeta;
+                pNroTarjeta.style.display = 'inline';
+                metodoDePagoDelUsuario_container.appendChild(pNroTarjeta);
+
+                const pClaveTarjeta = document.createElement('p');
+                const claveTarjeta = usuario.claveTarjeta;
+                pClaveTarjeta.textContent = "Clave de tarjeta: " + claveTarjeta;
+                pClaveTarjeta.style.display = 'inline';
+                metodoDePagoDelUsuario_container.appendChild(pClaveTarjeta);
+
+            }
+
+            if (usuario.medioDePago == "cupon") {
+
+                const metodoDePagoDelUsuario_container = document.querySelector(".metodoDePagoDelUsuario_container");
+                const pMetodoDePago = document.createElement('p');
+                pMetodoDePago.textContent = "Metodo de pago en uso: Cupon de pago";
+                pMetodoDePago.style.display = 'inline';
+                metodoDePagoDelUsuario_container.appendChild(pMetodoDePago);
+
+                if (usuario.metodoCupon == "pagoFacil") {
+
+                    const pMetodoCupon = document.createElement('p');
+                    pMetodoCupon.textContent = "Metodo de cupon: Pago Facil";
+                    pMetodoCupon.style.display = 'inline';
+                    metodoDePagoDelUsuario_container.appendChild(pMetodoCupon); 
+                    
+                }
+
+                if (usuario.metodoCupon == "rapiPago") {
+
+                    const pMetodoCupon = document.createElement('p');
+                    pMetodoCupon.textContent = "Metodo de cupon: RapiPago";
+                    pMetodoCupon.style.display = 'inline';
+                    metodoDePagoDelUsuario_container.appendChild(pMetodoCupon); 
+                    
+                }
+                
+
+            }
+
+
+            if (usuario.medioDePago == "transferencia") {
+
+                const metodoDePagoDelUsuario_container = document.querySelector(".metodoDePagoDelUsuario_container");
+                const pMetodoDePago = document.createElement('p');
+                pMetodoDePago.textContent = "Metodo de pago en uso: Transferencia";
+                pMetodoDePago.style.display = 'inline';
+                metodoDePagoDelUsuario_container.appendChild(pMetodoDePago);
+
+                const pCbu = document.createElement('p');
+                pCbu.textContent = "CBU: 85487632481526987";
+                pCbu.style.display = 'inline';
+                metodoDePagoDelUsuario_container.appendChild(pCbu);
+
+            }
+
+        }
+    });
+    
+}
+mostrarMedioDepagoDelUsuario();
+
+
+function eliminarUsuarioLogeado() {
+
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // Filtrar los usuarios que no están logeados
+    let usuariosActualizados = usuarios.filter(usuario => !usuario.logeado);
+
+    // Guardar el array actualizado en el localStorage
+    localStorage.setItem('usuarios', JSON.stringify(usuariosActualizados));
+}
+
+
+let cancelarSubscripcion_btn = document.querySelector(".button-cancel");
+
+cancelarSubscripcion_btn.addEventListener("click", eliminarUsuarioLogeado);
+
+
+
+const btnsubmit = document.querySelector('.nuevaContrasena_form');
+
+function evitarEnvioFormulario(event){
+
+    let contrasena = contrasena_input.value;
+
+    if (contraseña != null){
+        alert("erorrr")
     }
+}
+
 btnsubmit.addEventListener("submit", evitarEnvioFormulario)

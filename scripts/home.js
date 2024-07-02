@@ -10,18 +10,18 @@ const inputBuscador = document.querySelector('.inputBuscador');
 let gen = 'todos';
 let cat = 'todos';
 
-const preguntarSiHayUsuario = () => {
-    if (!localStorage.getItem('nombreDeUsuario')) {
-        cerrarSesionBtn.style.display = 'none';
-    } else {
-        cerrarSesionBtn.style.display = 'block';
-    }
-};
+// const preguntarSiHayUsuario = () => {
+//     if (!localStorage.getItem('nombreDeUsuario')) {
+//         cerrarSesionBtn.style.display = 'none';
+//     } else {
+//         cerrarSesionBtn.style.display = 'block';
+//     }
+// };
 
-cerrarSesionBtn.addEventListener('click', function () {
-    localStorage.clear();
-    preguntarSiHayUsuario();
-});
+// cerrarSesionBtn.addEventListener('click', function () {
+//     //localStorage.clear();
+//     //preguntarSiHayUsuario();
+// });
 
 // Home => todas las peliculas y series!
 

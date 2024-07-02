@@ -17,14 +17,31 @@ function mailExistePeroContrasenaNoCoincide(email, contrasena) {
 
 
 function mailNoExiste(email) {
-    
+
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    return usuarios.some(usuario => usuario.email != email);
+    return !usuarios.some(usuario => usuario.email === email);
 }
 
 function usuariosNoExiste() {
     
     return localStorage.getItem('usuarios') === null;
+}
+
+function mailExisteYContrasenaCoincide(email, contrasena) {
+    
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    return usuarios.some(usuario => usuario.email === email && usuario.contrasena === contrasena);
+}
+
+function actualizarEstadoDeLogueo(email, estado) {
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    usuarios = usuarios.map(usuario => {
+        if (usuario.email === email) {
+            usuario.logeado = estado;
+        }
+        return usuario;
+    });
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
 }
 
 // Funcion que previene que los datos no se manden si el nombre de usuario y contraseña no son correctos
@@ -36,7 +53,7 @@ function inicioDeSesionPrevent(event) {
     if (usuariosNoExiste()) {
 
         event.preventDefault();
-        alert("Mail de usuario no registrado!");
+        alert("Mail de usuario no registrado! (Ningun usuario registrado)");
         return;
 
     }
@@ -55,7 +72,33 @@ function inicioDeSesionPrevent(event) {
         alert("Contraseña incorrecta!");
         return;
     }
+
+    if (mailExisteYContrasenaCoincide(mailDeUsuarioIngresado, contrasenaIngresada)) {
+        
+        actualizarEstadoDeLogueo(mailDeUsuarioIngresado, true);
+
+    }
+
 }
 
 // Evento para que cuando se inicia sesion se guarde en nombre de usuario en el localStorage
 iniciarSesion_form.addEventListener("submit", inicioDeSesionPrevent);
+
+
+// Función para cerrar sesión automáticamente al cargar la página de inicio de sesión
+function cerrarSesionAutomatica() {
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    usuarios = usuarios.map(usuario => {
+
+        if (usuario.logeado) {
+            usuario.logeado = false;
+        }
+        return usuario;
+    });
+
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+}
+
+// Llamar a la función para cerrar sesión automáticamente cuando se carga la página
+document.addEventListener('DOMContentLoaded', cerrarSesionAutomatica);
