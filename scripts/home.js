@@ -58,7 +58,7 @@ const dibujarLista = (lista) => {
         setearListeners();
     }
 };
-dibujarLista(listaPeliculasSeries);
+
 dibujarLista(listaPeliculasSeries);
 const selectGenero = document.querySelector('.selectGenero');
 
