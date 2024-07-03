@@ -120,7 +120,7 @@ const dibujarDetalle = (pelicula) => {
         (e) => e.genero == pelicula.genero
     );
 
-    if (pelicula.categoria == 'pelicula') {
+    if (pelicula.categoria =='pelicula') {
 
         layout.innerHTML = `<section class="Descripcion-pelicula">
         <div class="container-peliculas">
@@ -160,10 +160,25 @@ const dibujarDetalle = (pelicula) => {
     </div>
     
         <section class="peliculas-similares">
-      
+      <div class="carousel-container">
+        <button class="carousel-button prev">❮</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            ${pelisSimilares.map(e => `
+              <li class="peli">
+            <a href="#" class="detalle-link" data-titulo="${e.titulo}">
+            <img class="peliImg" src="${e.img}" alt="${e.titulo}">
+            </a>
+            </li>
+            `).join('')}
+          </ul>
+        </div>
+        <button class="carousel-button next">❯</button>
+      </div>
+    </section>
           `;
         
-    } else if(pelicula.categoria == 'serie'){
+    } else if(pelicula.categoria === 'serie'){
 
         let opcionesTemporadas = '';
 
@@ -216,11 +231,90 @@ const dibujarDetalle = (pelicula) => {
     </div>
     
         <section class="peliculas-similares">
-      
+      <div class="carousel-container">
+        <button class="carousel-button prev">❮</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            ${pelisSimilares.map(e => `
+            <li class="peli">
+            <a href="#" class="detalle-link" data-titulo="${e.titulo}">
+              <img class="peliImg" src="${e.img}" alt="${e.titulo}">
+            </a>
+            </li>
+            `).join('')}
+          </ul>
+        </div>
+        <button class="carousel-button next">❯</button>
+      </div>
+    </section>
           `;
+          const track = document.querySelector('.carousel-track');
+          const slides = Array.from(track.children);
+          const nextButton = document.querySelector('.carousel-button.next');
+          const prevButton = document.querySelector('.carousel-button.prev');
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          const detalleLinks = document.querySelectorAll('.peliculas-similares .detalle-link');
+          
+          detalleLinks.forEach(link => {
+              link.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const titulo = link.getAttribute('data-titulo');
+                  const peliculaDetalle = listaPeliculasSeries.find(p => p.titulo === titulo);
+                  dibujarDetalle(peliculaDetalle);
+                  window.scrollTo(0, 0); // Desplazar hacia arriba para ver los detalles
+              });
+          });
+      
+          // Arrange slides next to one another
+          slides.forEach((slide, index) => {
+              slide.style.left = slideWidth * index + 'px';
+          });
+      
+          const moveToSlide = (track, currentSlide, targetSlide) => {
+              track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+              currentSlide.classList.remove('current-slide');
+              targetSlide.classList.add('current-slide');
+          };
+      
+          prevButton.addEventListener('click', e => {
+              const currentSlide = track.querySelector('.current-slide');
+              const prevSlide = currentSlide.previousElementSibling;
+      
+              if (prevSlide) {
+                  moveToSlide(track, currentSlide, prevSlide);
+              }
+          });
+      
+          nextButton.addEventListener('click', e => {
+              const currentSlide = track.querySelector('.current-slide');
+              const nextSlide = currentSlide.nextElementSibling;
+      
+              if (nextSlide) {
+                  moveToSlide(track, currentSlide, nextSlide);
+              }
+          });
+      
+          // Set the first slide as the current slide
+          slides[0].classList.add('current-slide');
+      
+          const cajas = document.querySelectorAll('.peli');
+          cajas.forEach((e) => {
+              e.addEventListener('click', (e) => {
+                  let titulo = e.target.alt;
+                  let pelicula = listaPeliculasSeries.find((e) => e.titulo == titulo);
+                  window.scroll(0, 0);
+                  dibujarDetalle(pelicula);
+              });
+          });
+      };       
 
 
-    // Función para actualizar los capítulos según la temporada seleccionada
+    
+    // Agregar evento para actualizar los capítulos cuando se cambie la temporada
+  const selectTempo=  document.getElementById('temporada_select')
+  if(selectTempo){
+
+// Función para actualizar los capítulos según la temporada seleccionada
     function actualizarCapitulos() {
 
         let temporadaSelect = document.getElementById('temporada_select');
@@ -237,19 +331,17 @@ const dibujarDetalle = (pelicula) => {
 
 }
 
-    // Agregar evento para actualizar los capítulos cuando se cambie la temporada
-    document.getElementById('temporada_select').addEventListener('change', actualizarCapitulos);
+
+
+
+    selectTempo.addEventListener('change', actualizarCapitulos);
+    actualizarCapitulos;
+  }
+  
 
     // Inicializar los capítulos para la primera temporada por defecto
-    actualizarCapitulos();
-
-
-    }
-
-
-    
-    const peliculasSimilaresLayout = document.querySelector('.peliculas-similares');
-
+  /*  
+const peliculasSimilaresLayout = document.querySelector('.peliculas-similares');
     pelisSimilares.forEach((e) => {
         let articleNode = document.createElement('article');
         articleNode.classList.add('peli');
@@ -263,7 +355,14 @@ const dibujarDetalle = (pelicula) => {
         articleNode.appendChild(imgArticle);
 
         peliculasSimilaresLayout.appendChild(articleNode);
-    });
+    });*/
+    }
+
+
+    
+    
+
+
 
     const cajas = document.querySelectorAll('.peli');
     cajas.forEach((e) => {
@@ -276,7 +375,7 @@ const dibujarDetalle = (pelicula) => {
             dibujarDetalle(pelicula);
         });
     });
-};
+
 
 function setearListeners() {
     const cajas = document.querySelectorAll('.caja');

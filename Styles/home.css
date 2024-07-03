@@ -125,3 +125,57 @@
     }
 
 }
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-track-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-track {
+    height: 20em;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: calc(100% * 4);
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .carousel-button.prev {
+    left: 0;
+  }
+  
+  .carousel-button.next {
+    right: 0;
+  }
+  
+  .peli {
+min-width: calc(100% / 4 - 20px);
+    margin: 0 10px;
+    
+  }
+  .carousel-track .peli {
+    width: 100%; /* Ajusta el tamaño de cada elemento <li> al 100% del contenedor */
+    height: 100%; /* Ajusta el tamaño de cada elemento <li> al 100% del contenedor */
+    overflow: hidden; /* Para asegurar que no haya desbordamiento de contenido */
+}
+
+.carousel-track .peli .peliImg {
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor <li> */
+    height: 100%; /* La imagen ocupa el 100% de la altura del contenedor <li> */
+    object-fit: cover; /* Ajusta la imagen para cubrir el tamaño del contenedor sin deformarla */
+}

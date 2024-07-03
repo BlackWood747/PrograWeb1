@@ -172,7 +172,7 @@ function validarClaveTarjeta() {
             textoClaveValida.innerText = 'clave valida';
             
             claveTarjetaValida = true;
-            localStorage.setItem("codigoTarjeta",claveTarjeta_input.value)
+            
 
         } else if(claveTarjeta == "000"){
             const textoClaveValida = document.getElementById('clavevalida')
@@ -250,7 +250,7 @@ function validarNumeroTarjeta() {
                 textoValidacionTarjeta.style.color = "green";
                 textoValidacionTarjeta.innerText="tarjeta valida";
                 numeroTarjetaValida = true;
-                localStorage.setItem("numeroTarjeta", numeroTarjeta_input.value)
+                
 
             } else if (esNumeroImparOPar(ultimoDigito) == "impar" && sumaDeNumerosDeLaTarjetaMenosElUltimoEsImparOPar(numeroTarjeta) == "par") {
                 const textoValidacionTarjeta = document.getElementById('tarjetavalida')
@@ -258,7 +258,7 @@ function validarNumeroTarjeta() {
                 textoValidacionTarjeta.innerText="tarjeta valida";
                 
                 numeroTarjetaValida = true;
-                localStorage.setItem("numeroTarjeta", numeroTarjeta_input.value)
+               
                 
             } 
 
