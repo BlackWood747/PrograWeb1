@@ -247,7 +247,7 @@ const dibujarDetalle = (pelicula) => {
         <button class="carousel-button next">❯</button>
       </div>
     </section>
-          `;
+          `; }
           const track = document.querySelector('.carousel-track');
           const slides = Array.from(track.children);
           const nextButton = document.querySelector('.carousel-button.next');
@@ -306,7 +306,7 @@ const dibujarDetalle = (pelicula) => {
                   dibujarDetalle(pelicula);
               });
           });
-      };       
+     ;       
 
 
     
