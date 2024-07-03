@@ -107,6 +107,13 @@
     margin-bottom: 50px;
 }
 
+.peli {
+    /* min-width: calc(60% / 4 - 20px); */
+    margin: 0 10px;
+    min-width: fit-content;
+    
+  }
+
 @media screen and (min-width: 300px) and (max-width: 768px) {
     .filtradoYBuscado_container {
         flex-direction: column-reverse;
@@ -123,6 +130,8 @@
     .filtrarPorCategoria select {
         width: 270px
     }
+
+   
 
 }
 .carousel-container {
@@ -163,11 +172,6 @@
     right: 0;
   }
   
-  .peli {
-min-width: calc(100% / 4 - 20px);
-    margin: 0 10px;
-    
-  }
   .carousel-track .peli {
     width: 100%; /* Ajusta el tamaño de cada elemento <li> al 100% del contenedor */
     height: 100%; /* Ajusta el tamaño de cada elemento <li> al 100% del contenedor */
